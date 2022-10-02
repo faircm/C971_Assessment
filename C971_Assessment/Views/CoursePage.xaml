@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971_Assessment.Views.CoursePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Course" x:Name="AddCourseBtn" Clicked="AddCourseBtn_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ListView x:Name="courseListView" ItemSelected="courseListView_ItemSelected" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Text="Course Title:" />
+                            <Label x:Name="courseTitle" Text="{Binding Title}" />
+
+                            <Label Text="Course Start Date:" />
+                            <Label x:Name="courseStart" Text="{Binding StartDate}" />
+
+                            <Label Text="Course End Date:" />
+                            <Label x:Name="courseEnd" Text="{Binding EndDate}" />
+
+                            <Label Text="Course Due Date:" />
+                            <Label x:Name="courseDue" Text="{Binding DueDate}" />
+
+                            <Label Text="Course Status:" />
+                            <Label x:Name="courseStatus" Text="{Binding Status}" />
+
+                            <Label Text="Instructor Name:" />
+                            <Label x:Name="instName" Text="{Binding InstructorName}" />
+
+                            <Label Text="Instructor Email:" />
+                            <Label x:Name="instEmail" Text="{Binding InstructorEmail}" />
+
+                            <Label Text="Instructor Phone Number:" />
+                            <Label x:Name="instPhone" Text="{Binding InstructorPhone}" />
+
+                            <Label Text="Course Notes:" />
+                            <Editor x:Name="courseNotes" Text="{Binding Notes}" IsReadOnly="True" />
+
+                            <Label Text="Notifications: " />
+                            <Switch x:Name="notificatioNSwitch" IsToggled="True" IsEnabled="False" />
+
+                            <!--
+                            <Label Text="Assessment List: " />
+                            <Editor x:Name="assessmentList" Text="{Binding AssessmentList}" />
+                            -->
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
