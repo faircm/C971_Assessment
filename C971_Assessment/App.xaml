@@ -29,6 +29,8 @@
             </Style>
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="#000" />
+                <Setter Property="Margin" Value="3,3,3,3" />
+                <Setter Property="FontSize" Value="Medium" />
             </Style>
             <Style TargetType="DatePicker">
                 <Setter Property="TextColor" Value="#000" />
@@ -36,6 +38,9 @@
             </Style>
             <Style TargetType="Entry">
                 <Setter Property="TextColor" Value="#000"></Setter>
+            </Style>
+            <Style TargetType="Picker">
+                <Setter Property="TextColor" Value="#000" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

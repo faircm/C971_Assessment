@@ -34,7 +34,7 @@ namespace C971_Assessment.Views
             }
             catch (Exception ex)
             {
-                DisplayAlert("exception caught", ex.Message, "ok");
+                DisplayAlert("Database Connection Error", ex.Message, "ok");
             }
         }
 
@@ -45,6 +45,12 @@ namespace C971_Assessment.Views
 
         private void courseListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            Course selectedCourse = (Course)courseListView.SelectedItem;
+
+            if (selectedCourse != null)
+            {
+                Navigation.PushAsync(new CourseDetailPage(selectedCourse));
+            }
         }
     }
 }

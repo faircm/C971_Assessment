@@ -4,6 +4,7 @@
              x:Class="C971_Assessment.Views.EditTermPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="saveTermBtn" Text="Save" Clicked="saveTermBtn_Clicked" />
+        <ToolbarItem x:Name="cancelBtn" Text="Cancel" Clicked="cancelBtn_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
@@ -16,12 +17,13 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
+            <Label x:Name="termId" IsVisible="False" IsEnabled="False" />
             <Label Text="Term Title: " Grid.Column="0" Grid.Row="0" />
-            <Entry x:Name="titleEntry" />
+            <Entry x:Name="titleEntry" Grid.Column="1" Grid.Row="0" />
             <Label Text="Term Start: " Grid.Column="0" Grid.Row="1" />
-            <DatePicker x:Name="startDatePicker" />
+            <DatePicker x:Name="startDatePicker" Grid.Column="1" Grid.Row="1" />
             <Label Text="Term End: " Grid.Column="0" Grid.Row="2" />
-            <DatePicker x:Name="endDatePicker" />
+            <DatePicker x:Name="endDatePicker" Grid.Column="1" Grid.Row="2" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

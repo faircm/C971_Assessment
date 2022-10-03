@@ -3,10 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="C971_Assessment.Views.HomePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Frame BackgroundColor="#003057" VerticalOptions="Fill" HorizontalOptions="Fill">
+            <Label Text="WGU DEGREE PLANNER" TextColor="#C69214" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Title"/>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>

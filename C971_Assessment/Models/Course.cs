@@ -18,8 +18,10 @@ namespace C971_Assessment.Models
         public string InstructorName { get; set; }
         public string InstructorEmail { get; set; }
         public string InstructorPhone { get; set; }
+
+        [MaxLength(250)]
         public string Notes { get; set; }
+
         public bool NotificationsOn { get; set; }
-        public List<Assessment> AssessmentList { get; set; }
     }
 }

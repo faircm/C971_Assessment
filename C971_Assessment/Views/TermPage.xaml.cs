@@ -52,5 +52,10 @@ namespace C971_Assessment.Views
                 Navigation.PushAsync(new TermDetailPage(selectedTerm));
             }
         }
+
+        //protected override bool OnBackButtonPressed()
+        //{
+        //    return true;
+        //}
     }
 }

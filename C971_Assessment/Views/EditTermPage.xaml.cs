@@ -20,7 +20,12 @@ namespace C971_Assessment.Views
         {
             InitializeComponent();
             _currentTerm = currentTerm;
+        }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            termId.Text = _currentTerm.Id.ToString();
             titleEntry.Text = _currentTerm.Title;
             startDatePicker.Date = _currentTerm.StartDate;
             endDatePicker.Date = _currentTerm.EndDate;
@@ -28,6 +33,7 @@ namespace C971_Assessment.Views
 
         private void saveTermBtn_Clicked(object sender, EventArgs e)
         {
+            _currentTerm.Id = Int32.Parse(termId.Text);
             _currentTerm.Title = titleEntry.Text;
             _currentTerm.StartDate = startDatePicker.Date;
             _currentTerm.EndDate = endDatePicker.Date;
@@ -38,13 +44,18 @@ namespace C971_Assessment.Views
                 if (conn.Update(_currentTerm) > 0)
                 {
                     DisplayAlert("Success", "Term edited successfully.", "Ok");
-                    Navigation.PopAsync();
+                    Navigation.PopToRootAsync();
                 }
                 else
                 {
                     DisplayAlert("Failure", "Term could not be edited", "Ok");
                 }
             }
+        }
+
+        private void cancelBtn_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
         }
     }
 }

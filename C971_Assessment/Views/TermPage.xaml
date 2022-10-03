@@ -23,7 +23,7 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-
+                            <Label Text="{Binding Id}" IsVisible="False" IsEnabled="False" />
                             <Label Text="Term Title: " Grid.Column="0" Grid.Row="0" />
                             <Label Text="{Binding Title}" Grid.Column="1" Grid.Row="0" />
 

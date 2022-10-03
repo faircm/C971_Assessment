@@ -5,13 +5,26 @@
              BackgroundColor="#FFF">
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="saveBtn" Text="Save" Clicked="saveBtn_Clicked" />
+        <ToolbarItem x:Name="cancelBtn" Text="Cancel" Clicked="cancelBtn_Clicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Entry x:Name="titleEntry" MaxLength="250" Placeholder="Enter Term Title" TextColor="Black"/>
-            <DatePicker x:Name="startDatePicker" TextColor="Black"/>
-            <DatePicker x:Name="endDatePicker" TextColor="Black"/>
-        </StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Text="Term Title: " Grid.Column="0" Grid.Row="0" />
+            <Entry x:Name="titleEntry" Grid.Column="1" Grid.Row="0" />
+            <Label Text="Term Start Date: " Grid.Column="0" Grid.Row="1" />
+            <DatePicker x:Name="startDatePicker" Grid.Column="1" Grid.Row="1" />
+            <Label Text="Term End Date: " Grid.Column="0" Grid.Row="2" />
+            <DatePicker x:Name="endDatePicker" Grid.Column="1" Grid.Row="2" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

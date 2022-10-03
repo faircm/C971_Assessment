@@ -1,4 +1,5 @@
 ﻿using C971_Assessment.Models;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,15 +20,51 @@ namespace C971_Assessment.Views
         {
             InitializeComponent();
             _selectedTerm = selectedTerm;
-            termTitle.Text = selectedTerm.Title;
-            termStart.Text = selectedTerm.StartDate.ToString();
-            termEnd.Text = selectedTerm.EndDate.ToString();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            termId.Text = _selectedTerm.Id.ToString();
+            termTitle.Text = _selectedTerm.Title;
+            termStart.Text = _selectedTerm.StartDate.ToString("MM/dd/yyyy");
+            termEnd.Text = _selectedTerm.EndDate.ToString("MM/dd/yyyy");
         }
 
         private void editDetailsBtn_Clicked(object sender, EventArgs e)
         {
-            Term currentTerm = new Term(termTitle.Text, DateTime.Parse(termStart.Text), DateTime.Parse(termEnd.Text));
-            Navigation.PushAsync(new EditTermPage(currentTerm));
+            Term termToEdit = new Term();
+            termToEdit.Id = Int32.Parse(termId.Text);
+            termToEdit.Title = termTitle.Text;
+            termToEdit.StartDate = DateTime.Parse(termStart.Text);
+            termToEdit.EndDate = DateTime.Parse(termEnd.Text);
+            Navigation.PushAsync(new EditTermPage(termToEdit));
         }
+
+        private void deleteBtn_Clicked(object sender, EventArgs e)
+        {
+            _selectedTerm.Title = termTitle.Text;
+            _selectedTerm.StartDate = DateTime.Parse(termStart.Text);
+            _selectedTerm.EndDate = DateTime.Parse(termEnd.Text);
+            using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
+            {
+                conn.CreateTable<Term>();
+                if (conn.Delete(_selectedTerm) > 0)
+                {
+                    DisplayAlert("Success", "Term deleted successfully.", "Ok");
+                    Navigation.PopAsync();
+                }
+                else
+                {
+                    DisplayAlert("Failure", "Term could not be deleted", "Ok");
+                }
+            }
+        }
+
+        /* protected override bool OnBackButtonPressed()
+         {
+             Navigation.PushAsync(new TermPage());
+             return true;
+         }*/
     }
 }

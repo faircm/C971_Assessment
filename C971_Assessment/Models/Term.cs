@@ -14,15 +14,15 @@ namespace C971_Assessment.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-        public Term()
-        {
-        }
+        /*        public Term()
+                {
+                }
 
-        public Term(string title, DateTime startDate, DateTime endDate)
-        {
-            Title = title;
-            StartDate = startDate;
-            EndDate = endDate;
-        }
+                public Term(string title, DateTime startDate, DateTime endDate)
+                {
+                    Title = title;
+                    StartDate = startDate;
+                    EndDate = endDate;
+                }*/
     }
 }

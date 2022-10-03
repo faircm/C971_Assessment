@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:C971_Assessment"
+             xmlns:model="clr-namespace:C971_Assessment.Models"
              x:Class="C971_Assessment.Views.CoursePage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add Course" x:Name="AddCourseBtn" Clicked="AddCourseBtn_Clicked" />
@@ -20,40 +22,25 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                            <Label Text="Course Title:" />
-                            <Label x:Name="courseTitle" Text="{Binding Title}" />
 
-                            <Label Text="Course Start Date:" />
-                            <Label x:Name="courseStart" Text="{Binding StartDate}" />
+                            <Label Text="Course Title:" Grid.Column="0" Grid.Row="0" />
+                            <Label x:Name="courseTitle" Text="{Binding Title}" Grid.Column="1" Grid.Row="0" />
 
-                            <Label Text="Course End Date:" />
-                            <Label x:Name="courseEnd" Text="{Binding EndDate}" />
+                            <Label Text="Course Due Date:" Grid.Column="0" Grid.Row="1" />
+                            <Label x:Name="courseDue" Text="{Binding DueDate}" Grid.Column="1" Grid.Row="1" />
 
-                            <Label Text="Course Due Date:" />
-                            <Label x:Name="courseDue" Text="{Binding DueDate}" />
+                            <Label Text="Course Status:" Grid.Column="0" Grid.Row="2" />
+                            <Label x:Name="courseStatus" Text="{Binding Status}" Grid.Column="1" Grid.Row="2" />
 
-                            <Label Text="Course Status:" />
-                            <Label x:Name="courseStatus" Text="{Binding Status}" />
-
-                            <Label Text="Instructor Name:" />
-                            <Label x:Name="instName" Text="{Binding InstructorName}" />
-
-                            <Label Text="Instructor Email:" />
-                            <Label x:Name="instEmail" Text="{Binding InstructorEmail}" />
-
-                            <Label Text="Instructor Phone Number:" />
-                            <Label x:Name="instPhone" Text="{Binding InstructorPhone}" />
-
-                            <Label Text="Course Notes:" />
-                            <Editor x:Name="courseNotes" Text="{Binding Notes}" IsReadOnly="True" />
-
-                            <Label Text="Notifications: " />
-                            <Switch x:Name="notificatioNSwitch" IsToggled="True" IsEnabled="False" />
-
-                            <!--
-                            <Label Text="Assessment List: " />
-                            <Editor x:Name="assessmentList" Text="{Binding AssessmentList}" />
-                            -->
+                            <!--Invisible fields, ensures all traits are sent to editing form on selection-->
+                            <Label x:Name="courseId" Text="{Binding Id}" IsVisible="False" />
+                            <Label x:Name="courseStart" Text="{Binding StartDate}"  IsVisible="False" />
+                            <Label x:Name="courseEnd" Text="{Binding EndDate}"  IsVisible="False" />
+                            <Label x:Name="instName" Text="{Binding InstructorName}"  IsVisible="False" />
+                            <Label x:Name="instEmail" Text="{Binding InstructorEmail}"  IsVisible="False" />
+                            <Label x:Name="instPhone" Text="{Binding InstructorPhone}"  IsVisible="False" />
+                            <Editor x:Name="courseNotes" Text="{Binding Notes}" IsReadOnly="True"  IsVisible="False" />
+                            <Switch x:Name="notificationSwitch" IsToggled="{Binding NotificationsOn}" IsVisible="False" IsEnabled="False" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

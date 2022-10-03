@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wH0NEyb0pPzBdi81O+Jzwsxzm7sUwoxGW7gf84HabCWYJC5r/W6nUJONz++yP/WE7ZlGLzIoTfRlUd8178Wvgw==",
+  "dgSpecHash": "K7i6RJBj87l1rcCtshFiG67iiyUSMMbwCccAlg+lHQ9hg8TsbNVJ8vAx1ek/zmHJdzco1GAevxiQ0hmVmXusYg==",
   "success": true,
   "projectFilePath": "C:\\Users\\cmfai\\OneDrive\\Desktop\\school\\C971_Assessment\\C971_Assessment\\C971_Assessment.Android\\C971_Assessment.Android.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,8 @@
     "C:\\Users\\cmfai\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\cmfai\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\cmfai\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\cmfai\\.nuget\\packages\\xam.plugins.notifier\\3.0.1\\xam.plugins.notifier.3.0.1.nupkg.sha512",
+    "C:\\Users\\cmfai\\.nuget\\packages\\xamarin.android.support.v4\\23.0.1.3\\xamarin.android.support.v4.23.0.1.3.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.activity\\1.1.0.5\\xamarin.androidx.activity.1.1.0.5.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.annotation\\1.1.0.8\\xamarin.androidx.annotation.1.1.0.8.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.androidx.annotation.experimental\\1.0.0.8\\xamarin.androidx.annotation.experimental.1.0.0.8.nupkg.sha512",
