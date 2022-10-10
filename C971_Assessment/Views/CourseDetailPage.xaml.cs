@@ -28,7 +28,6 @@ namespace C971_Assessment.Views
             base.OnAppearing();
             courseId.Text = _selectedCourse.Id.ToString();
             titleEntry.Text = _selectedCourse.Title;
-            //startDatePicker.Date = _selectedCourse.StartDate;
             startDate.Text = _selectedCourse.StartDate.ToString("MM/dd/yyyy");
             endDate.Text = _selectedCourse.EndDate.ToString("MM/dd/yyyy");
             dueDate.Text = _selectedCourse.DueDate.ToString("MM/dd/yyyy");

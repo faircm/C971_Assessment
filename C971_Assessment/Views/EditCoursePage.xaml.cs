@@ -22,7 +22,7 @@ namespace C971_Assessment.Views
         {
             InitializeComponent();
             _currentCourse = currentCourse;
-            statusPicker.ItemsSource = Status.statusOptions;
+            statusPicker.ItemsSource = PickerOptions.statusOptions;
         }
 
         protected override void OnAppearing()
@@ -43,11 +43,16 @@ namespace C971_Assessment.Views
 
         private void saveTermBtn_Clicked(object sender, EventArgs e)
         {
+            if (!DateUtils.startBeforeEnd(startDatePicker.Date, endDatePicker.Date))
+            {
+                DisplayAlert("Failure", "The course start date must occur before end date.", "Ok");
+                return;
+            }
             _currentCourse.Title = titleEntry.Text;
             _currentCourse.StartDate = startDatePicker.Date;
             _currentCourse.EndDate = endDatePicker.Date;
             _currentCourse.DueDate = dueDatePicker.Date;
-            _currentCourse.Status = Status.statusOptions[statusPicker.SelectedIndex];
+            _currentCourse.Status = PickerOptions.statusOptions[statusPicker.SelectedIndex];
             _currentCourse.InstructorName = instName.Text;
             _currentCourse.InstructorEmail = instEmail.Text;
             _currentCourse.InstructorPhone = instPhone.Text;

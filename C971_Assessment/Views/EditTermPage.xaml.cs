@@ -1,4 +1,5 @@
 ﻿using C971_Assessment.Models;
+using C971_Assessment.Resources;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,11 @@ namespace C971_Assessment.Views
 
         private void saveTermBtn_Clicked(object sender, EventArgs e)
         {
+            if (!DateUtils.startBeforeEnd(startDatePicker.Date, endDatePicker.Date))
+            {
+                DisplayAlert("Failure", "The assessment start date must occur before end date.", "Ok");
+                return;
+            }
             _currentTerm.Id = Int32.Parse(termId.Text);
             _currentTerm.Title = titleEntry.Text;
             _currentTerm.StartDate = startDatePicker.Date;

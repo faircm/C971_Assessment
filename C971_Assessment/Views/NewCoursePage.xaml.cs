@@ -19,17 +19,22 @@ namespace C971_Assessment.Views
         {
             InitializeComponent();
 
-            statusPicker.ItemsSource = Status.statusOptions;
+            statusPicker.ItemsSource = PickerOptions.statusOptions;
         }
 
         private void saveBtn_Clicked(object sender, EventArgs e)
         {
+            if (!DateUtils.startBeforeEnd(startDatePicker.Date, endDatePicker.Date))
+            {
+                DisplayAlert("Failure", "The course start date must occur before end date.", "Ok");
+                return;
+            }
             Course newCourse = new Course();
             newCourse.Title = titleEntry.Text;
             newCourse.StartDate = startDatePicker.Date;
             newCourse.EndDate = endDatePicker.Date;
             newCourse.DueDate = dueDatePicker.Date;
-            newCourse.Status = Status.statusOptions[statusPicker.SelectedIndex];
+            newCourse.Status = PickerOptions.statusOptions[statusPicker.SelectedIndex];
             newCourse.InstructorName = instName.Text;
             newCourse.InstructorEmail = instEmail.Text;
             newCourse.InstructorPhone = instPhone.Text;
