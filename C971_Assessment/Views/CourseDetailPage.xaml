@@ -45,7 +45,7 @@
                 <Label x:Name="dueDate" FontSize="Medium" Grid.Column="1" Grid.Row="3" />
 
                 <Label Text="Course Status:" Grid.Column="0" Grid.Row="4" />
-                <Label x:Name="courseStatus" Grid.Column="1" Grid.Row="4"/>
+                <Label x:Name="courseStatus" Grid.Column="1" Grid.Row="4" />
 
                 <Label Text="Instructor Name:" Grid.Column="0" Grid.Row="5" />
                 <Label x:Name="instName" Grid.Column="1" Grid.Row="5" />
@@ -60,7 +60,7 @@
                 <Label x:Name="courseNotes" Grid.Column="1" Grid.Row="8" />
 
                 <Label Text="Notifications: " Grid.Column="0" Grid.Row="9" />
-                <CheckBox x:Name="notificationSwitch"  Grid.Column="1" Grid.Row="9" IsEnabled="False" IsVisible="True" />
+                <Switch x:Name="notificationSwitch"  Grid.Column="1" Grid.Row="9" IsEnabled="False" IsVisible="True" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

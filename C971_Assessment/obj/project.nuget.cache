@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uxlhTw6gDVqJYNTTy68eWl4wbvi24Q6Wh3SeNKA8pGVL+JLQ/x0V/BCbx19Ppy0LVf7BXO0rddYN4wiTGZYeAQ==",
+  "dgSpecHash": "BItiMuumiF8I9M5bqSy6gWU3eOeJ+9R8D3ptGeqBRr+Qk75W0sclzCmYb+2gGQL0tncTQxQLrR5y9rQkOqOf3w==",
   "success": true,
   "projectFilePath": "C:\\Users\\cmfai\\OneDrive\\Desktop\\school\\C971_Assessment\\C971_Assessment\\C971_Assessment\\C971_Assessment.csproj",
   "expectedPackageFiles": [
@@ -16,8 +16,8 @@
     "C:\\Users\\cmfai\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\cmfai\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
     "C:\\Users\\cmfai\\.nuget\\packages\\xam.plugins.notifier\\3.0.1\\xam.plugins.notifier.3.0.1.nupkg.sha512",
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+    "C:\\Users\\cmfai\\.nuget\\packages\\xamarin.essentials\\1.7.3\\xamarin.essentials.1.7.3.nupkg.sha512",
+    "C:\\Users\\cmfai\\.nuget\\packages\\xamarin.forms\\5.0.0.2515\\xamarin.forms.5.0.0.2515.nupkg.sha512"
   ],
   "logs": []
 }

@@ -53,10 +53,10 @@
                 <Entry x:Name="instPhone" Keyboard="Telephone" ReturnType="Next"  Grid.Column="1" Grid.Row="7" />
 
                 <Label Text="Course Notes:" Grid.Column="0" Grid.Row="8" />
-                <Entry x:Name="courseNotes" ReturnType="Next"  Grid.Column="1" Grid.Row="8"/>
+                <Entry x:Name="courseNotes" ReturnType="Next"  Grid.Column="1" Grid.Row="8" />
 
                 <Label Text="Notifications: " Grid.Column="0" Grid.Row="9" />
-                <CheckBox x:Name="notificationSwitch"  Grid.Column="1" Grid.Row="9" />
+                <Switch x:Name="notificationSwitch"  Grid.Column="1" Grid.Row="9" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

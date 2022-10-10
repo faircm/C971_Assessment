@@ -36,7 +36,7 @@ namespace C971_Assessment.Views
             instEmail.Text = _selectedCourse.InstructorEmail;
             instPhone.Text = _selectedCourse.InstructorPhone;
             courseNotes.Text = _selectedCourse.Notes;
-            notificationSwitch.IsChecked = _selectedCourse.NotificationsOn;
+            notificationSwitch.IsToggled = _selectedCourse.NotificationsOn;
         }
 
         private void editDetailsBtn_Clicked(object sender, EventArgs e)

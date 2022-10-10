@@ -19,6 +19,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Label x:Name="assessmentId" />
 
@@ -31,11 +32,14 @@
                 <Label Text="Assessment End Date:" Grid.Column="0" Grid.Row="2" />
                 <DatePicker x:Name="endDate" Grid.Column="1" Grid.Row="2" />
 
-                <Label Text="Assessment Type:" Grid.Column="0" Grid.Row="3" />
-                <Picker x:Name="assessmentType" Grid.Column="1" Grid.Row="3" />
+                <Label Text="Assessment Due Date:" Grid.Column="0" Grid.Row="3" />
+                <DatePicker x:Name="dueDate" Grid.Column="1" Grid.Row="3" />
 
-                <Label Text="Notifications:" Grid.Column="0" Grid.Row="4" />
-                <CheckBox x:Name="notificationSwitch" Grid.Column="1" Grid.Row="4" />
+                <Label Text="Assessment Type:" Grid.Column="0" Grid.Row="4" />
+                <Picker x:Name="assessmentType" Grid.Column="1" Grid.Row="4" />
+
+                <Label Text="Notifications:" Grid.Column="0" Grid.Row="5" />
+                <Switch x:Name="notificationSwitch" Grid.Column="1" Grid.Row="5" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

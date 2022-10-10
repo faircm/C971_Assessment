@@ -23,30 +23,45 @@ namespace C971_Assessment.Views
 
         private void saveBtn_Clicked(object sender, EventArgs e)
         {
-            if (!DateUtils.startBeforeEnd(startDate.Date, endDate.Date))
+            if (DateUtils.startBeforeEnd(startDate.Date, endDate.Date) && DateUtils.isInDateRange(dueDate.Date, startDate.Date, endDate.Date))
+            {
+                if (assessmentTitle.Text.Length == 0)
+                {
+                    DisplayAlert("Failure", "Assessment must have a title.", "Ok");
+                    return;
+                }
+
+                Assessment newAssessment = new Assessment();
+                newAssessment.Title = assessmentTitle.Text;
+                newAssessment.StartDate = startDate.Date;
+                newAssessment.EndDate = endDate.Date;
+                newAssessment.DueDate = dueDate.Date;
+                newAssessment.Type = PickerOptions.typeOptions[assessmentType.SelectedIndex];
+                newAssessment.NotificationsOn = notificationSwitch.IsToggled;
+
+                using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
+                {
+                    conn.CreateTable<Assessment>();
+                    if (conn.Insert(newAssessment) > 0)
+                    {
+                        DisplayAlert("Success", "Assessment added successfully.", "Ok");
+                        Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        DisplayAlert("Failure", "Assessment could not be added", "Ok");
+                    }
+                }
+            }
+            else if (!DateUtils.startBeforeEnd(startDate.Date, endDate.Date))
             {
                 DisplayAlert("Failure", "The assessment start date must occur before end date.", "Ok");
                 return;
             }
-            Assessment newAssessment = new Assessment();
-            newAssessment.Title = assessmentTitle.Text;
-            newAssessment.StartDate = startDate.Date;
-            newAssessment.EndDate = endDate.Date;
-            newAssessment.Type = PickerOptions.typeOptions[assessmentType.SelectedIndex];
-            newAssessment.NotificationsOn = notificationSwitch.IsChecked;
-
-            using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
+            else if (!DateUtils.isInDateRange(dueDate.Date, startDate.Date, endDate.Date))
             {
-                conn.CreateTable<Assessment>();
-                if (conn.Insert(newAssessment) > 0)
-                {
-                    DisplayAlert("Success", "Assessment added successfully.", "Ok");
-                    Navigation.PopAsync();
-                }
-                else
-                {
-                    DisplayAlert("Failure", "Assessment could not be added", "Ok");
-                }
+                DisplayAlert("Failure", "The assessment due date must occur within the start and end dates.", "Ok");
+                return;
             }
         }
 

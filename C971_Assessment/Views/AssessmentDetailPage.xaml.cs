@@ -29,6 +29,7 @@ namespace C971_Assessment.Views
             assessmentTitle.Text = _selectedAssessment.Title;
             startDate.Text = _selectedAssessment.StartDate.ToString("MM/dd/yyyy");
             endDate.Text = _selectedAssessment.EndDate.ToString("MM/dd/yyyy");
+            dueDate.Text = _selectedAssessment.DueDate.ToString("MM/dd/yyy");
             assessmentType.Text = _selectedAssessment.Type;
             notificationSwitch.IsChecked = _selectedAssessment.NotificationsOn;
         }
