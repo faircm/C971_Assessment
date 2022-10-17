@@ -1,4 +1,5 @@
-﻿using C971_Assessment.Views;
+﻿using C971_Assessment.Resources;
+using C971_Assessment.Views;
 using Xamarin.Forms;
 
 namespace C971_Assessment
@@ -9,6 +10,8 @@ namespace C971_Assessment
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
+            Notifier.getAssessmentNotifications();
+            Notifier.getCourseNotifications();
         }
     }
 }

@@ -76,5 +76,10 @@ namespace C971_Assessment.Views
         {
             Navigation.PushAsync(new AssessmentPage(_selectedCourse));
         }
+
+        private async void shareCourseDetails_Clicked(object sender, EventArgs e)
+        {
+            await Share.ShareText(titleEntry.Text, courseNotes.Text);
+        }
     }
 }

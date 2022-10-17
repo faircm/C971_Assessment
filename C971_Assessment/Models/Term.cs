@@ -5,6 +5,7 @@ using System.Text;
 
 namespace C971_Assessment.Models
 {
+    [Table("Term")]
     public class Term
     {
         [PrimaryKey, AutoIncrement]
