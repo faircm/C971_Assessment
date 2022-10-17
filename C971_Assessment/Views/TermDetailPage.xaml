@@ -10,10 +10,11 @@
     <ContentPage.Content>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="150" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -23,8 +24,9 @@
             <Label x:Name="termTitle" Grid.Column="1" Grid.Row="0" />
             <Label Text="Term Start: " Grid.Column="0" Grid.Row="1" />
             <Label x:Name="termStart" Grid.Column="1" Grid.Row="1" />
-            <Label Text="Term End: " Grid.Column="0" Grid.Row="2" />
+            <Label Text="Term End: " Grid.Column="0" Grid.Row="2" Margin="0,5,0,40" />
             <Label x:Name="termEnd" Grid.Column="1" Grid.Row="2" />
+            <Button x:Name="viewCoursesBtn" Text="View Courses" Clicked="viewCoursesBtn_Clicked" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" BackgroundColor="#327DA9" TextColor="#FFF" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

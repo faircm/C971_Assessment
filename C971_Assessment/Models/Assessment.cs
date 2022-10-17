@@ -10,16 +10,12 @@ namespace C971_Assessment.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        [NotNull]
         public string Title { get; set; }
-
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public DateTime DueDate { get; set; }
-
-        [NotNull]
         public string Type { get; set; }
-
         public bool NotificationsOn { get; set; }
+        public int CourseID { get; set; }
     }
 }

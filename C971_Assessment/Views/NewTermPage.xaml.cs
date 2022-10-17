@@ -22,35 +22,46 @@ namespace C971_Assessment.Views
 
         private void saveBtn_Clicked(object sender, EventArgs e)
         {
-            if (titleEntry.Text.Length == 0)
+            try
             {
-                DisplayAlert("Failure", "Term must have a title.", "Ok");
+                if (titleEntry.Text.Length == 0 || startDatePicker.Date == null || endDatePicker.Date == null)
+                {
+                    throw new ArgumentNullException();
+                }
+
+                if (!DateUtils.startBeforeEnd(startDatePicker.Date, endDatePicker.Date))
+                {
+                    throw new IllegalDateTimeException();
+                }
+
+                Term newTerm = new Term();
+                newTerm.Title = titleEntry.Text;
+                newTerm.StartDate = startDatePicker.Date;
+                newTerm.EndDate = endDatePicker.Date;
+
+                using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
+                {
+                    conn.CreateTable<Term>();
+                    if (conn.Insert(newTerm) > 0)
+                    {
+                        DisplayAlert("Success", "Term added successfully.", "Ok");
+                        Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        DisplayAlert("Failure", "Term could not be added", "Ok");
+                    }
+                }
+            }
+            catch (ArgumentNullException)
+            {
+                DisplayAlert("Error", "Ensure all fields are complete before proceeding", "Ok");
                 return;
             }
-
-            if (!DateUtils.startBeforeEnd(startDatePicker.Date, endDatePicker.Date))
+            catch (IllegalDateTimeException)
             {
-                DisplayAlert("Failure", "The term start date must occur before end date.", "Ok");
+                DisplayAlert("Error", "The term start date must occur before end date.", "Ok");
                 return;
-            }
-
-            Term newTerm = new Term();
-            newTerm.Title = titleEntry.Text;
-            newTerm.StartDate = startDatePicker.Date;
-            newTerm.EndDate = endDatePicker.Date;
-
-            using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
-            {
-                conn.CreateTable<Term>();
-                if (conn.Insert(newTerm) > 0)
-                {
-                    DisplayAlert("Success", "Term added successfully.", "Ok");
-                    Navigation.PopAsync();
-                }
-                else
-                {
-                    DisplayAlert("Failure", "Term could not be added", "Ok");
-                }
             }
         }
 

@@ -15,20 +15,27 @@ namespace C971_Assessment.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewAssessmentPage : ContentPage
     {
-        public NewAssessmentPage()
+        private int _courseId;
+
+        public NewAssessmentPage(int courseId)
         {
             InitializeComponent();
+            _courseId = courseId;
             assessmentType.ItemsSource = PickerOptions.typeOptions;
         }
 
         private void saveBtn_Clicked(object sender, EventArgs e)
         {
-            if (DateUtils.startBeforeEnd(startDate.Date, endDate.Date) && DateUtils.isInDateRange(dueDate.Date, startDate.Date, endDate.Date))
+            try
             {
-                if (assessmentTitle.Text.Length == 0)
+                if (assessmentTitle.Text.Length == 0 || assessmentType.SelectedIndex == -1 || startDate.Date == null || endDate.Date == null || dueDate.Date == null)
                 {
-                    DisplayAlert("Failure", "Assessment must have a title.", "Ok");
-                    return;
+                    throw new ArgumentNullException();
+                }
+
+                if (!DateUtils.startBeforeEnd(startDate.Date, endDate.Date) || !DateUtils.isInDateRange(dueDate.Date, startDate.Date, endDate.Date))
+                {
+                    throw new IllegalDateTimeException();
                 }
 
                 Assessment newAssessment = new Assessment();
@@ -38,6 +45,7 @@ namespace C971_Assessment.Views
                 newAssessment.DueDate = dueDate.Date;
                 newAssessment.Type = PickerOptions.typeOptions[assessmentType.SelectedIndex];
                 newAssessment.NotificationsOn = notificationSwitch.IsToggled;
+                newAssessment.CourseID = _courseId;
 
                 using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
                 {
@@ -53,14 +61,19 @@ namespace C971_Assessment.Views
                     }
                 }
             }
-            else if (!DateUtils.startBeforeEnd(startDate.Date, endDate.Date))
+            catch (ArgumentNullException)
             {
-                DisplayAlert("Failure", "The assessment start date must occur before end date.", "Ok");
+                DisplayAlert("Error", "Ensure all fields are complete before proceeding", "Ok");
                 return;
             }
-            else if (!DateUtils.isInDateRange(dueDate.Date, startDate.Date, endDate.Date))
+            catch (IllegalDateTimeException) when (!DateUtils.startBeforeEnd(startDate.Date, endDate.Date))
             {
-                DisplayAlert("Failure", "The assessment due date must occur within the start and end dates.", "Ok");
+                DisplayAlert("Error", "The assessment start date must occur before end date.", "Ok");
+                return;
+            }
+            catch (IllegalDateTimeException) when (!DateUtils.isInDateRange(dueDate.Date, startDate.Date, endDate.Date))
+            {
+                DisplayAlert("Error", "The assessment due date must occur within the start and end dates.", "Ok");
                 return;
             }
         }

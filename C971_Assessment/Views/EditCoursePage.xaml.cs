@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -16,6 +17,12 @@ namespace C971_Assessment.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditCoursePage : ContentPage
     {
+        //https://uibakery.io/regex-library/email-regex-csharp email regex
+        //https://uibakery.io/regex-library/phone-number-csharp phone number regex
+
+        private Regex emailPattern = new Regex("^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$");
+        private Regex phonePattern = new Regex("^\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}$");
+
         private Course _currentCourse;
 
         public EditCoursePage(Course currentCourse)
@@ -29,6 +36,7 @@ namespace C971_Assessment.Views
         {
             base.OnAppearing();
             courseId.Text = _currentCourse.Id.ToString();
+            termId.Text = _currentCourse.termId.ToString();
             titleEntry.Text = _currentCourse.Title;
             startDatePicker.Date = _currentCourse.StartDate;
             endDatePicker.Date = _currentCourse.EndDate;
@@ -41,15 +49,31 @@ namespace C971_Assessment.Views
             notificationSwitch.IsToggled = _currentCourse.NotificationsOn;
         }
 
-        private void saveTermBtn_Clicked(object sender, EventArgs e)
+        private void saveCourse_btn(object sender, EventArgs e)
         {
-            if (titleEntry.Text.Length == 0)
+            try
             {
-                DisplayAlert("Failure", "Course must have a title.", "Ok");
-                return;
-            }
-            if (DateUtils.startBeforeEnd(startDatePicker.Date, endDatePicker.Date) && DateUtils.isInDateRange(dueDatePicker.Date, startDatePicker.Date, endDatePicker.Date))
-            {
+                if (titleEntry.Text.Length == 0 || statusPicker.SelectedIndex == -1 || startDatePicker.Date == null || endDatePicker.Date == null || dueDatePicker.Date == null || instName.Text.Length == 0 || instPhone.Text.Length == 0 || instEmail.Text.Length == 0)
+                {
+                    throw new ArgumentNullException();
+                }
+
+                if (!DateUtils.startBeforeEnd(startDatePicker.Date, endDatePicker.Date) || !DateUtils.isInDateRange(dueDatePicker.Date, startDatePicker.Date, endDatePicker.Date))
+                {
+                    throw new IllegalDateTimeException();
+                }
+
+                if (!emailPattern.IsMatch(instEmail.Text))
+                {
+                    throw new InvalidEmailAddressException();
+                }
+                if (!phonePattern.IsMatch(instPhone.Text))
+                {
+                    throw new InvalidPhoneNumberException();
+                }
+
+                _currentCourse.Id = Int32.Parse(courseId.Text);
+                _currentCourse.termId = Int32.Parse(termId.Text);
                 _currentCourse.Title = titleEntry.Text;
                 _currentCourse.StartDate = startDatePicker.Date;
                 _currentCourse.EndDate = endDatePicker.Date;
@@ -75,15 +99,31 @@ namespace C971_Assessment.Views
                         DisplayAlert("Failure", "Course could not be edited", "Ok");
                     }
                 }
+                //}
             }
-            else if (!DateUtils.startBeforeEnd(startDatePicker.Date, endDatePicker.Date))
+            catch (ArgumentNullException)
             {
-                DisplayAlert("Failure", "The course start date must occur before end date.", "Ok");
+                DisplayAlert("Error", "Ensure all fields are complete before proceeding", "Ok");
                 return;
             }
-            else if (!DateUtils.isInDateRange(dueDatePicker.Date, startDatePicker.Date, endDatePicker.Date))
+            catch (IllegalDateTimeException) when (!DateUtils.startBeforeEnd(startDatePicker.Date, endDatePicker.Date))
             {
-                DisplayAlert("Failure", "The course due date must occur within the start and end dates.", "Ok");
+                DisplayAlert("Error", "The course start date must occur before end date.", "Ok");
+                return;
+            }
+            catch (IllegalDateTimeException) when (!DateUtils.isInDateRange(dueDatePicker.Date, startDatePicker.Date, endDatePicker.Date))
+            {
+                DisplayAlert("Error", "The course due date must occur within the start and end dates.", "Ok");
+                return;
+            }
+            catch (InvalidEmailAddressException)
+            {
+                DisplayAlert("Error", "You have entered an invalid email address.", "Ok");
+                return;
+            }
+            catch (InvalidPhoneNumberException)
+            {
+                DisplayAlert("Error", "You have entered an invalid phone number.", "Ok");
                 return;
             }
         }

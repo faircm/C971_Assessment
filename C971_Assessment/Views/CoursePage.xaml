@@ -14,10 +14,11 @@
                     <ViewCell>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="150" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
@@ -30,9 +31,10 @@
                             <Label x:Name="courseDue" Text="{Binding DueDate}" Grid.Column="1" Grid.Row="1" />
 
                             <Label Text="Course Status:" Grid.Column="0" Grid.Row="2" />
-                            <Label x:Name="courseStatus" Text="{Binding Status}" Grid.Column="1" Grid.Row="2" />
+                            <Label x:Name="courseStatus" Text="{Binding Status}" Grid.Column="1" Grid.Row="2" Margin="0,0,0,40" />
 
                             <!--Invisible fields, ensures all traits are sent to editing form on selection-->
+                            <Label x:Name="termId" Text="{Binding termId}" IsVisible="False" />
                             <Label x:Name="courseId" Text="{Binding Id}" IsVisible="False" />
                             <Label x:Name="courseStart" Text="{Binding StartDate}"  IsVisible="False" />
                             <Label x:Name="courseEnd" Text="{Binding EndDate}"  IsVisible="False" />

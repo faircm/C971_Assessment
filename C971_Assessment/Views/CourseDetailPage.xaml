@@ -27,22 +27,23 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <Label x:Name="courseId" IsVisible="False" />
+                <Label x:Name="termId" IsVisible="False" />
 
                 <Label Text="Course Title: " Grid.Column="0" Grid.Row="0" />
                 <Label x:Name="titleEntry" Grid.Column="1" Grid.Row="0" />
 
                 <Label Text="Course Start Date: " Grid.Column="0" Grid.Row="1" />
-                <!--<DatePicker x:Name="startDatePicker" Grid.Column="1" Grid.Row="1" IsEnabled="False" IsVisible="true" />-->
-                <Label x:Name="startDate" FontSize="Medium" Grid.Column="1" Grid.Row="1" />
+                <Label x:Name="startDate" Grid.Column="1" Grid.Row="1" />
 
                 <Label Text="Course End Date: " Grid.Column="0" Grid.Row="2" />
-                <Label x:Name="endDate" FontSize="Medium" Grid.Column="1" Grid.Row="2" />
+                <Label x:Name="endDate" Grid.Column="1" Grid.Row="2" />
 
                 <Label Text="Course Due Date: " Grid.Column="0" Grid.Row="3" />
-                <Label x:Name="dueDate" FontSize="Medium" Grid.Column="1" Grid.Row="3" />
+                <Label x:Name="dueDate" Grid.Column="1" Grid.Row="3" />
 
                 <Label Text="Course Status:" Grid.Column="0" Grid.Row="4" />
                 <Label x:Name="courseStatus" Grid.Column="1" Grid.Row="4" />
@@ -61,6 +62,8 @@
 
                 <Label Text="Notifications: " Grid.Column="0" Grid.Row="9" />
                 <Switch x:Name="notificationSwitch"  Grid.Column="1" Grid.Row="9" IsEnabled="False" IsVisible="True" />
+
+                <Button x:Name="viewAssessmentsBtn" Text="View Assessments" Clicked="viewAssessmentsBtn_Clicked" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="10" BackgroundColor="#327DA9" TextColor="#FFF" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

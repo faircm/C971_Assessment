@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="C971_Assessment.Views.EditCoursePage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="saveTermBtn" Text="Save" Clicked="saveTermBtn_Clicked" />
+        <ToolbarItem x:Name="saveTermBtn" Text="Save" Clicked="saveCourse_btn" />
         <ToolbarItem x:Name="cancelBtn" Text="Cancel" Clicked="cancelBtn_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
@@ -27,35 +27,35 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Label x:Name="courseId" IsVisible="False" IsEnabled="False" />
-
-                <Label Text="Course Title: " Grid.Column="0" Grid.Row="0" />
+                <Label x:Name="termId" IsVisible="False" IsEnabled="False" />
+                <Label Text="Course Title: " Grid.Column="0" Grid.Row="0" Margin="0,10,0,0" />
                 <Entry x:Name="titleEntry" Grid.Column="1" Grid.Row="0" ReturnType="Next" />
 
-                <Label Text="Course Start Date: " Grid.Column="0" Grid.Row="1" />
+                <Label Text="Course Start Date: " Grid.Column="0" Grid.Row="1" Margin="0,10,0,0" />
                 <DatePicker x:Name="startDatePicker" Grid.Column="1" Grid.Row="1" />
 
-                <Label Text="Course End Date: " Grid.Column="0" Grid.Row="2" />
+                <Label Text="Course End Date: " Grid.Column="0" Grid.Row="2" Margin="0,10,0,0" />
                 <DatePicker x:Name="endDatePicker" Grid.Column="1" Grid.Row="2" />
 
-                <Label Text="Course Due Date: " Grid.Column="0" Grid.Row="3" />
+                <Label Text="Course Due Date: " Grid.Column="0" Grid.Row="3" Margin="0,10,0,0" />
                 <DatePicker x:Name="dueDatePicker"  Grid.Column="1" Grid.Row="3" />
 
-                <Label Text="Course Status:" Grid.Column="0" Grid.Row="4" />
+                <Label Text="Course Status:" Grid.Column="0" Grid.Row="4" Margin="0,10,0,0" />
                 <Picker x:Name="statusPicker" Grid.Column="1" Grid.Row="4" />
 
-                <Label Text="Instructor Name:" Grid.Column="0" Grid.Row="5" />
+                <Label Text="Instructor Name:" Grid.Column="0" Grid.Row="5" Margin="0,10,0,0" />
                 <Entry x:Name="instName" ReturnType="Next"  Grid.Column="1" Grid.Row="5" />
 
-                <Label Text="Instructor Email:" Grid.Column="0" Grid.Row="6" />
+                <Label Text="Instructor Email:" Grid.Column="0" Grid.Row="6" Margin="0,10,0,0" />
                 <Entry x:Name="instEmail"  Keyboard="Email" ReturnType="Next"  Grid.Column="1" Grid.Row="6" />
 
-                <Label Text="Instructor Phone Number:" Grid.Column="0" Grid.Row="7" />
+                <Label Text="Instructor Phone Number:" Grid.Column="0" Grid.Row="7" Margin="0,10,0,0" />
                 <Entry x:Name="instPhone" Keyboard="Telephone" ReturnType="Next"  Grid.Column="1" Grid.Row="7" />
 
-                <Label Text="Course Notes:" Grid.Column="0" Grid.Row="8" />
+                <Label Text="Course Notes:" Grid.Column="0" Grid.Row="8" Margin="0,10,0,0" />
                 <Entry x:Name="courseNotes" ReturnType="Next"  Grid.Column="1" Grid.Row="8" />
 
-                <Label Text="Notifications: " Grid.Column="0" Grid.Row="9" />
+                <Label Text="Notifications: " Grid.Column="0" Grid.Row="9" Margin="0,10,0,0" />
                 <Switch x:Name="notificationSwitch"  Grid.Column="1" Grid.Row="9" />
             </Grid>
         </StackLayout>

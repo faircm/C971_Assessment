@@ -61,10 +61,9 @@ namespace C971_Assessment.Views
             }
         }
 
-        /* protected override bool OnBackButtonPressed()
-         {
-             Navigation.PushAsync(new TermPage());
-             return true;
-         }*/
+        private void viewCoursesBtn_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CoursePage(_selectedTerm));
+        }
     }
 }

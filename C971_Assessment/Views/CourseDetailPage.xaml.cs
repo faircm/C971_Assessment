@@ -27,6 +27,7 @@ namespace C971_Assessment.Views
         {
             base.OnAppearing();
             courseId.Text = _selectedCourse.Id.ToString();
+            termId.Text = _selectedCourse.termId.ToString();
             titleEntry.Text = _selectedCourse.Title;
             startDate.Text = _selectedCourse.StartDate.ToString("MM/dd/yyyy");
             endDate.Text = _selectedCourse.EndDate.ToString("MM/dd/yyyy");
@@ -59,6 +60,11 @@ namespace C971_Assessment.Views
                     DisplayAlert("Failure", "Course could not be deleted", "Ok");
                 }
             }
+        }
+
+        private void viewAssessmentsBtn_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AssessmentPage(_selectedCourse.Id));
         }
     }
 }

@@ -6,6 +6,7 @@ C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Asse
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment\obj\Debug\netstandard2.0\Views\AssessmentDetailPage.xaml.g.cs
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment\obj\Debug\netstandard2.0\Views\AssessmentPage.xaml.g.cs
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment\obj\Debug\netstandard2.0\Views\CourseDetailPage.xaml.g.cs
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment\obj\Debug\netstandard2.0\Views\CoursePage.xaml.g.cs
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment\obj\Debug\netstandard2.0\Views\EditAssessmentPage.xaml.g.cs
@@ -24,4 +25,3 @@ C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Asse
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment\obj\Debug\netstandard2.0\C971_Assessment.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment\obj\Debug\netstandard2.0\ref\C971_Assessment.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment\obj\Debug\netstandard2.0\C971_Assessment.pdb
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment\obj\Debug\netstandard2.0\C971_Assessment.csproj.AssemblyReference.cache

@@ -34,34 +34,45 @@ namespace C971_Assessment.Views
 
         private void saveTermBtn_Clicked(object sender, EventArgs e)
         {
-            if (titleEntry.Text.Length == 0)
+            try
             {
-                DisplayAlert("Failure", "Term must have a title.", "Ok");
+                if (titleEntry.Text.Length == 0 || startDatePicker.Date == null || endDatePicker.Date == null)
+                {
+                    throw new ArgumentNullException();
+                }
+
+                if (!DateUtils.startBeforeEnd(startDatePicker.Date, endDatePicker.Date))
+                {
+                    throw new IllegalDateTimeException();
+                }
+                _currentTerm.Id = Int32.Parse(termId.Text);
+                _currentTerm.Title = titleEntry.Text;
+                _currentTerm.StartDate = startDatePicker.Date;
+                _currentTerm.EndDate = endDatePicker.Date;
+
+                using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
+                {
+                    conn.CreateTable<Term>();
+                    if (conn.Update(_currentTerm) > 0)
+                    {
+                        DisplayAlert("Success", "Term edited successfully.", "Ok");
+                        Navigation.PopToRootAsync();
+                    }
+                    else
+                    {
+                        DisplayAlert("Failure", "Term could not be edited", "Ok");
+                    }
+                }
+            }
+            catch (ArgumentNullException)
+            {
+                DisplayAlert("Error", "Ensure all fields are complete before proceeding", "Ok");
                 return;
             }
-
-            if (!DateUtils.startBeforeEnd(startDatePicker.Date, endDatePicker.Date))
+            catch (IllegalDateTimeException)
             {
-                DisplayAlert("Failure", "The term start date must occur before end date.", "Ok");
+                DisplayAlert("Error", "The term start date must occur before end date.", "Ok");
                 return;
-            }
-            _currentTerm.Id = Int32.Parse(termId.Text);
-            _currentTerm.Title = titleEntry.Text;
-            _currentTerm.StartDate = startDatePicker.Date;
-            _currentTerm.EndDate = endDatePicker.Date;
-
-            using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
-            {
-                conn.CreateTable<Term>();
-                if (conn.Update(_currentTerm) > 0)
-                {
-                    DisplayAlert("Success", "Term edited successfully.", "Ok");
-                    Navigation.PopToRootAsync();
-                }
-                else
-                {
-                    DisplayAlert("Failure", "Term could not be edited", "Ok");
-                }
             }
         }
 

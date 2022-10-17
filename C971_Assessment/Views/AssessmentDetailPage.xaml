@@ -24,6 +24,7 @@
                 </Grid.RowDefinitions>
 
                 <Label x:Name="assessmentId" IsVisible="False" />
+                <Label x:Name="courseId" IsVisible="False" />
 
                 <Label Text="Assessment Title:" Grid.Column="0" Grid.Row="0" />
                 <Label x:Name="assessmentTitle" Grid.Column="1" Grid.Row="0" />

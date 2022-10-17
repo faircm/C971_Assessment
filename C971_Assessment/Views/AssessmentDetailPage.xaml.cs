@@ -26,6 +26,7 @@ namespace C971_Assessment.Views
         {
             base.OnAppearing();
             assessmentId.Text = _selectedAssessment.Id.ToString();
+            courseId.Text = _selectedAssessment.CourseID.ToString();
             assessmentTitle.Text = _selectedAssessment.Title;
             startDate.Text = _selectedAssessment.StartDate.ToString("MM/dd/yyyy");
             endDate.Text = _selectedAssessment.EndDate.ToString("MM/dd/yyyy");

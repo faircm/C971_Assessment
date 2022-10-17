@@ -1,6 +1,8 @@
 ﻿using C971_Assessment.Services;
 using C971_Assessment.Views;
+using C971_Assessment.Resources;
 using System;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,9 +22,8 @@ namespace C971_Assessment
         public App(string databaseLocation)
         {
             _databaseLocation = databaseLocation;
-
             InitializeComponent();
-
+            SampleData.populateDB();
             MainPage = new AppShell();
         }
 

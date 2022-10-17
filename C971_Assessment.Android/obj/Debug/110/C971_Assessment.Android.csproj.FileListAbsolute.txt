@@ -1,3 +1,7 @@
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\build.props
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\adb.props
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\C971_Assessment.Android.csproj.AssemblyReference.cache
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\bin\Debug\C971_Assessment.Android.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\bin\Debug\C971_Assessment.Android.pdb
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\bin\Debug\com.companyname.c971_assessment.apk
@@ -7,10 +11,6 @@ C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Asse
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\bin\Debug\com.companyname.c971_assessment-Signed.apk.idsig
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\bin\Debug\C971_Assessment.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\bin\Debug\C971_Assessment.pdb
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\build.props
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\adb.props
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\C971_Assessment.Android.csproj.AssemblyReference.cache
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_BuildLibraryImportsCache.stamp
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\res.flag
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_AndroidXJetifyEmbeddedFiles.stamp
@@ -86,6 +86,7 @@ C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Asse
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\netstandard.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\Plugin.LocalNotifications.Abstractions.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\Plugin.LocalNotifications.dll
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\Plugin.LocalNotifications.dll.mdb
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\SQLite-net.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\SQLitePCLRaw.batteries_v2.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\SQLitePCLRaw.core.dll
@@ -246,9 +247,9 @@ C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Asse
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\Xamarin.Google.Android.Material.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\Xamarin.Google.Android.Material.pdb
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\Xamarin.Google.Guava.ListenableFuture.dll
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\jl\b85b7ef5-329a-499a-b972-87d0e3aca042.jar
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\jl\990c4a33-006f-414d-980b-e3606617d4b2.jar
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_AndroidXJetifyJavaLibraryRules.stamp
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\proguard\a68b89b0-cb30-40b6-bbf5-993e64047a16.cfg
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\proguard\1f1e6064-ff6e-4142-9779-601d1824d076.cfg
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_AndroidXJetifyProguardRules.stamp
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\_AndroidXJetifyProguardRules.jetify
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_AndroidXCecilfy.stamp
@@ -672,4 +673,3 @@ C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Asse
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\Plugin.LocalNotifications.pdb

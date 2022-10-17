@@ -21,7 +21,8 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Label x:Name="assessmentId" />
+                <Label x:Name="assessmentId" IsVisible="False" IsEnabled="False" />
+                <Label x:Name="courseId" IsVisible="False" IsEnabled="False" />
 
                 <Label Text="Assessment Title:" Grid.Column="0" Grid.Row="0" />
                 <Entry x:Name="assessmentTitle" Grid.Column="1" Grid.Row="0" />

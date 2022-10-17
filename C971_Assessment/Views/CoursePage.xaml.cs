@@ -14,9 +14,12 @@ namespace C971_Assessment.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CoursePage : ContentPage
     {
-        public CoursePage()
+        private int _termID;
+
+        public CoursePage(Term selectedTerm)
         {
             InitializeComponent();
+            _termID = selectedTerm.Id;
         }
 
         protected override void OnAppearing()
@@ -29,6 +32,14 @@ namespace C971_Assessment.Views
                 {
                     conn.CreateTable<Course>();
                     List<Course> courseList = conn.Table<Course>().ToList();
+
+                    for (int i = 0; i < courseList.Count; i++)
+                    {
+                        if (courseList[i].termId != _termID)
+                        {
+                            courseList.RemoveAt(i);
+                        }
+                    }
                     courseListView.ItemsSource = courseList;
                 }
             }
@@ -40,7 +51,7 @@ namespace C971_Assessment.Views
 
         private void AddCourseBtn_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new NewCoursePage());
+            Navigation.PushAsync(new NewCoursePage(_termID));
         }
 
         private void courseListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

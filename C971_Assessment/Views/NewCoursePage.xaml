@@ -10,7 +10,7 @@
         <StackLayout>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="150" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -25,28 +25,28 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Label Text="Course Title: " Grid.Column="0" Grid.Row="0" />
+                <Label Text="* Course Title: " Grid.Column="0" Grid.Row="0" />
                 <Entry x:Name="titleEntry" Grid.Column="1" Grid.Row="0" ReturnType="Next" />
 
-                <Label Text="Course Start Date: " Grid.Column="0" Grid.Row="1" />
+                <Label Text="* Course Start Date: " Grid.Column="0" Grid.Row="1" />
                 <DatePicker x:Name="startDatePicker" Grid.Column="1" Grid.Row="1" />
 
-                <Label Text="Course End Date: " Grid.Column="0" Grid.Row="2" />
+                <Label Text="* Course End Date: " Grid.Column="0" Grid.Row="2" />
                 <DatePicker x:Name="endDatePicker" Grid.Column="1" Grid.Row="2" />
 
-                <Label Text="Course Due Date: " Grid.Column="0" Grid.Row="3" />
+                <Label Text="* Course Due Date: " Grid.Column="0" Grid.Row="3" />
                 <DatePicker x:Name="dueDatePicker"  Grid.Column="1" Grid.Row="3" />
 
-                <Label Text="Course Status:" Grid.Column="0" Grid.Row="4" />
+                <Label Text="* Course Status:" Grid.Column="0" Grid.Row="4" />
                 <Picker x:Name="statusPicker" Title="Select course status" Grid.Column="1" Grid.Row="4" />
 
-                <Label Text="Instructor Name:" Grid.Column="0" Grid.Row="5" />
+                <Label Text="* Instructor Name:" Grid.Column="0" Grid.Row="5" />
                 <Entry x:Name="instName" ReturnType="Next"  Grid.Column="1" Grid.Row="5" />
 
-                <Label Text="Instructor Email:" Grid.Column="0" Grid.Row="6" />
+                <Label Text="* Instructor Email:" Grid.Column="0" Grid.Row="6" />
                 <Entry x:Name="instEmail"  Keyboard="Email" ReturnType="Next"  Grid.Column="1" Grid.Row="6" />
 
-                <Label Text="Instructor Phone Number:" Grid.Column="0" Grid.Row="7" />
+                <Label Text="* Instructor Phone Number:" Grid.Column="0" Grid.Row="7" />
                 <Entry x:Name="instPhone" Keyboard="Telephone" ReturnType="Next"  Grid.Column="1" Grid.Row="7" />
 
                 <Label Text="Course Notes:" Grid.Column="0" Grid.Row="8" />
