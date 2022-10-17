@@ -95,10 +95,21 @@ namespace C971_Assessment.Views
                         if (_currentAssessment.Type == "Objective")
                         {
                             if (!objFlag)
+                            {
                                 _selectedCourse.NumObjective++;
+                                _selectedCourse.NumPerformance--;
+                            }
+                                
                         }
                         else
-                            _selectedCourse.NumPerformance++;
+                        {
+                            if (objFlag)
+                            {
+                                _selectedCourse.NumPerformance++;
+                                _selectedCourse.NumObjective--;
+                            }
+                        }
+                            
                     }
                     else
                     {

@@ -86,7 +86,6 @@ C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Asse
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\netstandard.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\Plugin.LocalNotifications.Abstractions.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\Plugin.LocalNotifications.dll
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\Plugin.LocalNotifications.dll.mdb
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\SQLite-net.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\SQLitePCLRaw.batteries_v2.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\SQLitePCLRaw.core.dll
@@ -673,3 +672,4 @@ C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Asse
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\jl\76bdc229-4bdd-44ef-a15c-cd5c87da891a.jar
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\proguard\1c0e9530-0cba-422a-aa32-2f4b39600253.cfg
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\Plugin.LocalNotifications.pdb

@@ -30,6 +30,7 @@ namespace C971_Assessment.Views
             titleEntry.Text = _currentTerm.Title;
             startDatePicker.Date = _currentTerm.StartDate;
             endDatePicker.Date = _currentTerm.EndDate;
+            numCourses.Text = _currentTerm.NumCourses.ToString();
         }
 
         private void saveTermBtn_Clicked(object sender, EventArgs e)
