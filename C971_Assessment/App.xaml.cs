@@ -23,7 +23,8 @@ namespace C971_Assessment
         {
             _databaseLocation = databaseLocation;
             InitializeComponent();
-            SampleData.populateDB();
+            //SampleData.populateDB();
+            //ClearDB.clearDatabase();
             MainPage = new AppShell();
         }
 

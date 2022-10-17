@@ -38,6 +38,7 @@ namespace C971_Assessment.Views
                 newTerm.Title = titleEntry.Text;
                 newTerm.StartDate = startDatePicker.Date;
                 newTerm.EndDate = endDatePicker.Date;
+                newTerm.NumCourses = 0;
 
                 using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
                 {

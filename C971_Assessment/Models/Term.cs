@@ -15,5 +15,6 @@ namespace C971_Assessment.Models
 
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public int NumCourses { get; set; }
     }
 }

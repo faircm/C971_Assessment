@@ -49,6 +49,7 @@ namespace C971_Assessment.Views
                 _currentTerm.Title = titleEntry.Text;
                 _currentTerm.StartDate = startDatePicker.Date;
                 _currentTerm.EndDate = endDatePicker.Date;
+                _currentTerm.NumCourses = Int32.Parse(numCourses.Text);
 
                 using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
                 {

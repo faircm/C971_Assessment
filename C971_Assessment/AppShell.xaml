@@ -32,7 +32,6 @@
     <TabBar>
         <ShellContent Title="Home" ContentTemplate="{DataTemplate local:HomePage}" />
         <ShellContent Title="Terms" ContentTemplate="{DataTemplate local:TermPage}" />
-        <ShellContent Title="Courses" ContentTemplate="{DataTemplate local:CoursePage}" />
     </TabBar>
 
     <!--

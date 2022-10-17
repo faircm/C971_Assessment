@@ -21,5 +21,7 @@ namespace C971_Assessment.Models
         public string Notes { get; set; }
         public bool NotificationsOn { get; set; }
         public int termId { get; set; }
+        public int NumObjective { get; set; }
+        public int NumPerformance { get; set; }
     }
 }

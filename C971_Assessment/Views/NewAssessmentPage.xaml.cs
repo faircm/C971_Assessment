@@ -16,11 +16,14 @@ namespace C971_Assessment.Views
     public partial class NewAssessmentPage : ContentPage
     {
         private int _courseId;
+        private Course _selectedCourse;
 
-        public NewAssessmentPage(int courseId)
+        public NewAssessmentPage(Course selectedCourse)
         {
             InitializeComponent();
-            _courseId = courseId;
+            _courseId = selectedCourse.Id;
+            _selectedCourse = selectedCourse;
+
             assessmentType.ItemsSource = PickerOptions.typeOptions;
         }
 
@@ -28,6 +31,28 @@ namespace C971_Assessment.Views
         {
             try
             {
+                // Check if this assessment will exceed the 1-per-type limit for each course.
+                if (PickerOptions.typeOptions[assessmentType.SelectedIndex] == "Performance")
+                {
+                    if (_selectedCourse.NumPerformance == 1)
+                    {
+                        DisplayAlert("Error", "Each course may only have one Performance assessment", "Ok");
+                        return;
+                    }
+                    else
+                        _selectedCourse.NumPerformance++;
+                }
+                else if (PickerOptions.typeOptions[assessmentType.SelectedIndex] == "Objective")
+                {
+                    if (_selectedCourse.NumObjective == 1)
+                    {
+                        DisplayAlert("Error", "Each course may only have one Objective assessment", "Ok");
+                        return;
+                    }
+                    else
+                        _selectedCourse.NumObjective++;
+                }
+
                 if (assessmentTitle.Text.Length == 0 || assessmentType.SelectedIndex == -1 || startDate.Date == null || endDate.Date == null || dueDate.Date == null)
                 {
                     throw new ArgumentNullException();
@@ -53,12 +78,17 @@ namespace C971_Assessment.Views
                     if (conn.Insert(newAssessment) > 0)
                     {
                         DisplayAlert("Success", "Assessment added successfully.", "Ok");
-                        Navigation.PopAsync();
                     }
                     else
                     {
                         DisplayAlert("Failure", "Assessment could not be added", "Ok");
                     }
+                }
+                using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
+                {
+                    conn.CreateTable<Course>();
+                    conn.Update(_selectedCourse);
+                    Navigation.PopAsync();
                 }
             }
             catch (ArgumentNullException)

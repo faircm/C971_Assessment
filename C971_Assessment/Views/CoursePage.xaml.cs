@@ -15,11 +15,13 @@ namespace C971_Assessment.Views
     public partial class CoursePage : ContentPage
     {
         private int _termID;
+        private Term _selectedTerm;
 
         public CoursePage(Term selectedTerm)
         {
             InitializeComponent();
             _termID = selectedTerm.Id;
+            _selectedTerm = selectedTerm;
         }
 
         protected override void OnAppearing()
@@ -45,13 +47,20 @@ namespace C971_Assessment.Views
             }
             catch (Exception ex)
             {
-                DisplayAlert("Database Connection Error", ex.Message, "ok");
+                DisplayAlert("Database Connection Error", ex.Message, "Ok");
             }
         }
 
         private void AddCourseBtn_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new NewCoursePage(_termID));
+            // Only allow user to add a course if the maximum of 6 per term has not been reached.
+            if (_selectedTerm.NumCourses == 6)
+            {
+                DisplayAlert("Alert", "You have already added the maximum number of courses per term (6).", "Ok");
+                return;
+            }
+            else
+                Navigation.PushAsync(new NewCoursePage(_selectedTerm));
         }
 
         private void courseListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -60,7 +69,7 @@ namespace C971_Assessment.Views
 
             if (selectedCourse != null)
             {
-                Navigation.PushAsync(new CourseDetailPage(selectedCourse));
+                Navigation.PushAsync(new CourseDetailPage(selectedCourse, _selectedTerm));
             }
         }
     }

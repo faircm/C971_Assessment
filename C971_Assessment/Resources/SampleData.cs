@@ -15,6 +15,7 @@ namespace C971_Assessment.Resources
             sampleTerm.Title = "Sample Term";
             sampleTerm.StartDate = DateTime.Parse("05/01/2022");
             sampleTerm.EndDate = DateTime.Parse("10/31/2022");
+            sampleTerm.NumCourses = 1;
 
             Course sampleCourse = new Course();
             sampleCourse.Id = 1;
@@ -29,6 +30,8 @@ namespace C971_Assessment.Resources
             sampleCourse.Notes = "Cutting it close";
             sampleCourse.NotificationsOn = true;
             sampleCourse.Status = "Started";
+            sampleCourse.NumObjective = 1;
+            sampleCourse.NumPerformance = 1;
 
             Assessment sampleAssessment_1 = new Assessment();
             sampleAssessment_1.Id = 1;
@@ -53,23 +56,33 @@ namespace C971_Assessment.Resources
             using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
             {
                 conn.CreateTable<Term>();
-                conn.InsertOrReplace(sampleTerm);
+                if (conn.Table<Term>().Count() == 0)
+                {
+                    conn.Insert(sampleTerm);
+                }
             }
             using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
             {
                 conn.CreateTable<Course>();
-                conn.InsertOrReplace(sampleCourse);
+                if (conn.Table<Course>().Count() == 0)
+                {
+                    conn.Insert(sampleCourse);
+                }
             }
             using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
             {
                 conn.CreateTable<Assessment>();
-                conn.InsertOrReplace(sampleAssessment_1);
+                if (conn.Table<Assessment>().Count() == 0)
+                {
+                    conn.InsertOrReplace(sampleAssessment_1);
+                    conn.InsertOrReplace(sampleAssessment_2);
+                }
             }
-            using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
+            /*using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
             {
                 conn.CreateTable<Assessment>();
                 conn.InsertOrReplace(sampleAssessment_2);
-            }
+            }*/
         }
     }
 }

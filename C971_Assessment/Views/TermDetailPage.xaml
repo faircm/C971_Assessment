@@ -19,7 +19,8 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Label x:Name="termId" IsVisible="False" IsEnabled="False" />
+            <Label x:Name="termId" IsVisible="False" />
+            <Label x:Name="numCourses" IsVisible="False" />
             <Label Text="Term Title: " Grid.Column="0" Grid.Row="0" />
             <Label x:Name="termTitle" Grid.Column="1" Grid.Row="0" />
             <Label Text="Term Start: " Grid.Column="0" Grid.Row="1" />

@@ -16,11 +16,15 @@ namespace C971_Assessment.Views
     public partial class EditAssessmentPage : ContentPage
     {
         private Assessment _currentAssessment;
+        private Course _selectedCourse;
+        private bool objFlag = false;
 
-        public EditAssessmentPage(Assessment currentAssessment)
+        public EditAssessmentPage(Assessment currentAssessment, Course selectedCourse)
         {
             InitializeComponent();
             _currentAssessment = currentAssessment;
+            _selectedCourse = selectedCourse;
+            assessmentType.ItemsSource = PickerOptions.typeOptions;
         }
 
         protected override void OnAppearing()
@@ -34,12 +38,35 @@ namespace C971_Assessment.Views
             endDate.Date = _currentAssessment.EndDate;
             dueDate.Date = _currentAssessment.DueDate;
             notificationSwitch.IsToggled = _currentAssessment.NotificationsOn;
+
+            if (_currentAssessment.Type == "Objective")
+            {
+                objFlag = true;
+            }
         }
 
         private void saveBtn_Clicked(object sender, EventArgs e)
         {
             try
             {
+                // Check if this assessment will exceed the 1-per-type limit for each course.
+                if (PickerOptions.typeOptions[assessmentType.SelectedIndex] == "Performance")
+                {
+                    if (_selectedCourse.NumPerformance == 1 && objFlag)
+                    {
+                        DisplayAlert("Error", "Each course may only have one Performance assessment", "Ok");
+                        return;
+                    }
+                }
+                else if (PickerOptions.typeOptions[assessmentType.SelectedIndex] == "Objective")
+                {
+                    if (_selectedCourse.NumObjective == 1 && !objFlag)
+                    {
+                        DisplayAlert("Error", "Each course may only have one Objective assessment", "Ok");
+                        return;
+                    }
+                }
+
                 if (assessmentTitle.Text.Length == 0 || assessmentType.SelectedIndex == -1 || startDate.Date == null || endDate.Date == null || dueDate.Date == null)
                 {
                     throw new ArgumentNullException();
@@ -55,7 +82,7 @@ namespace C971_Assessment.Views
                     _currentAssessment.Id = Int32.Parse(assessmentId.Text);
                     _currentAssessment.CourseID = Int32.Parse(courseId.Text);
                     _currentAssessment.Title = assessmentTitle.Text;
-                    _currentAssessment.Type = assessmentType.SelectedItem.ToString();
+                    _currentAssessment.Type = PickerOptions.typeOptions[assessmentType.SelectedIndex];
                     _currentAssessment.StartDate = startDate.Date;
                     _currentAssessment.EndDate = endDate.Date;
                     _currentAssessment.DueDate = dueDate.Date;
@@ -65,12 +92,24 @@ namespace C971_Assessment.Views
                     if (conn.Update(_currentAssessment) > 0)
                     {
                         DisplayAlert("Success", "Assessment edited successfully.", "Ok");
-                        Navigation.PopToRootAsync();
+                        if (_currentAssessment.Type == "Objective")
+                        {
+                            if (!objFlag)
+                                _selectedCourse.NumObjective++;
+                        }
+                        else
+                            _selectedCourse.NumPerformance++;
                     }
                     else
                     {
                         DisplayAlert("Failure", "Assessment could not be edited", "Ok");
                     }
+                }
+                using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
+                {
+                    conn.CreateTable<Course>();
+                    conn.Update(_selectedCourse);
+                    Navigation.PopAsync();
                 }
             }
             catch (ArgumentNullException)

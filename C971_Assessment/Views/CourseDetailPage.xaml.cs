@@ -16,11 +16,13 @@ namespace C971_Assessment.Views
     public partial class CourseDetailPage : ContentPage
     {
         private Course _selectedCourse;
+        private Term _selectedTerm;
 
-        public CourseDetailPage(Course selectedCourse)
+        public CourseDetailPage(Course selectedCourse, Term selectedTerm)
         {
             InitializeComponent();
             _selectedCourse = selectedCourse;
+            _selectedTerm = selectedTerm;
         }
 
         protected override void OnAppearing()
@@ -28,6 +30,8 @@ namespace C971_Assessment.Views
             base.OnAppearing();
             courseId.Text = _selectedCourse.Id.ToString();
             termId.Text = _selectedCourse.termId.ToString();
+            numObjective.Text = _selectedCourse.NumObjective.ToString();
+            numPerformance.Text = _selectedCourse.NumPerformance.ToString();
             titleEntry.Text = _selectedCourse.Title;
             startDate.Text = _selectedCourse.StartDate.ToString("MM/dd/yyyy");
             endDate.Text = _selectedCourse.EndDate.ToString("MM/dd/yyyy");
@@ -53,18 +57,24 @@ namespace C971_Assessment.Views
                 if (conn.Delete(_selectedCourse) > 0)
                 {
                     DisplayAlert("Success", "Course deleted successfully.", "Ok");
-                    Navigation.PopAsync();
+                    _selectedTerm.NumCourses--;
                 }
                 else
                 {
                     DisplayAlert("Failure", "Course could not be deleted", "Ok");
                 }
             }
+            using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
+            {
+                conn.CreateTable<Term>();
+                conn.Update(_selectedTerm);
+                Navigation.PopAsync();
+            }
         }
 
         private void viewAssessmentsBtn_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AssessmentPage(_selectedCourse.Id));
+            Navigation.PushAsync(new AssessmentPage(_selectedCourse));
         }
     }
 }

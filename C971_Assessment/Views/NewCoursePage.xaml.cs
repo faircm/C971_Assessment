@@ -18,12 +18,14 @@ namespace C971_Assessment.Views
     {
         private Regex emailPattern = new Regex("^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$");
         private Regex phonePattern = new Regex("^\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}$");
+        private Term _selectedTerm;
         private int _termId;
 
-        public NewCoursePage(int termId)
+        public NewCoursePage(Term selectedTerm)
         {
             InitializeComponent();
-            _termId = termId;
+            _termId = selectedTerm.Id;
+            _selectedTerm = selectedTerm;
             statusPicker.ItemsSource = PickerOptions.statusOptions;
         }
 
@@ -71,14 +73,19 @@ namespace C971_Assessment.Views
                     if (conn.Insert(newCourse) > 0)
                     {
                         DisplayAlert("Success", "Course added successfully.", "Ok");
-                        Navigation.PopAsync();
+                        _selectedTerm.NumCourses++;
                     }
                     else
                     {
                         DisplayAlert("Failure", "Course could not be added", "Ok");
                     }
                 }
-                //}
+                using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
+                {
+                    conn.CreateTable<Term>();
+                    conn.Update(_selectedTerm);
+                    Navigation.PopAsync();
+                }
             }
             catch (ArgumentNullException)
             {

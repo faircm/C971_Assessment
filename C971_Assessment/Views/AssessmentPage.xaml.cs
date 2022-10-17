@@ -15,11 +15,13 @@ namespace C971_Assessment.Views
     public partial class AssessmentPage : ContentPage
     {
         private int _courseId;
+        private Course _selectedCourse;
 
-        public AssessmentPage(int courseId)
+        public AssessmentPage(Course selectedCourse)
         {
             InitializeComponent();
-            _courseId = courseId;
+            _courseId = selectedCourse.Id;
+            _selectedCourse = selectedCourse;
         }
 
         protected override void OnAppearing()
@@ -33,6 +35,8 @@ namespace C971_Assessment.Views
                     conn.CreateTable<Assessment>();
                     List<Assessment> assessmentList = conn.Table<Assessment>().ToList();
 
+                    // Sort out assessments whose courseId doesn't match the currently selected course
+                    // For matching assessments, determine how many objective and performance assessments are already added.
                     for (int i = 0; i < assessmentList.Count; i++)
                     {
                         if (assessmentList[i].CourseID != _courseId)
@@ -45,7 +49,7 @@ namespace C971_Assessment.Views
             }
             catch (Exception ex)
             {
-                DisplayAlert("Database Connection Error", ex.Message, "ok");
+                DisplayAlert("Database Connection Error", ex.Message, "Ok");
             }
         }
 
@@ -55,13 +59,19 @@ namespace C971_Assessment.Views
 
             if (selectedAssessment != null)
             {
-                Navigation.PushAsync(new AssessmentDetailPage(selectedAssessment));
+                Navigation.PushAsync(new AssessmentDetailPage(selectedAssessment, _selectedCourse));
             }
         }
 
         private void AddAssessmentBtn_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new NewAssessmentPage(_courseId));
+            // Continue only if the user has not reached the maximum number of assessments for the course.
+            if (_selectedCourse.NumObjective == 1 && _selectedCourse.NumPerformance == 1)
+            {
+                DisplayAlert("Alert", "You have already added the maximum number of assessments for this course.", "Ok");
+                return;
+            }
+            Navigation.PushAsync(new NewAssessmentPage(_selectedCourse));
         }
     }
 }

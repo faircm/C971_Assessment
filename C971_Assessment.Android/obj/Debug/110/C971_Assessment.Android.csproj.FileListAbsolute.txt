@@ -1,7 +1,3 @@
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\build.props
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\adb.props
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\C971_Assessment.Android.csproj.AssemblyReference.cache
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\bin\Debug\C971_Assessment.Android.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\bin\Debug\C971_Assessment.Android.pdb
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\bin\Debug\com.companyname.c971_assessment.apk
@@ -11,6 +7,10 @@ C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Asse
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\bin\Debug\com.companyname.c971_assessment-Signed.apk.idsig
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\bin\Debug\C971_Assessment.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\bin\Debug\C971_Assessment.pdb
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\build.props
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\adb.props
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\C971_Assessment.Android.csproj.AssemblyReference.cache
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_BuildLibraryImportsCache.stamp
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\res.flag
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_AndroidXJetifyEmbeddedFiles.stamp
@@ -247,9 +247,7 @@ C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Asse
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\Xamarin.Google.Android.Material.dll
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\Xamarin.Google.Android.Material.pdb
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\Xamarin.Google.Guava.ListenableFuture.dll
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\jl\990c4a33-006f-414d-980b-e3606617d4b2.jar
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_AndroidXJetifyJavaLibraryRules.stamp
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\proguard\1f1e6064-ff6e-4142-9779-601d1824d076.cfg
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_AndroidXJetifyProguardRules.stamp
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\_AndroidXJetifyProguardRules.jetify
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_AndroidXCecilfy.stamp
@@ -673,3 +671,5 @@ C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Asse
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\jl\76bdc229-4bdd-44ef-a15c-cd5c87da891a.jar
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\proguard\1c0e9530-0cba-422a-aa32-2f4b39600253.cfg

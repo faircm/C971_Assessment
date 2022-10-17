@@ -32,6 +32,8 @@
 
                 <Label x:Name="courseId" IsVisible="False" />
                 <Label x:Name="termId" IsVisible="False" />
+                <Label x:Name="numObjective" IsVisible="False" />
+                <Label x:Name="numPerformance" IsVisible="False" />
 
                 <Label Text="Course Title: " Grid.Column="0" Grid.Row="0" />
                 <Label x:Name="titleEntry" Grid.Column="1" Grid.Row="0" />

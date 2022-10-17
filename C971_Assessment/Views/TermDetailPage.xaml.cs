@@ -29,6 +29,7 @@ namespace C971_Assessment.Views
             termTitle.Text = _selectedTerm.Title;
             termStart.Text = _selectedTerm.StartDate.ToString("MM/dd/yyyy");
             termEnd.Text = _selectedTerm.EndDate.ToString("MM/dd/yyyy");
+            numCourses.Text = _selectedTerm.NumCourses.ToString();
         }
 
         private void editDetailsBtn_Clicked(object sender, EventArgs e)
@@ -38,14 +39,15 @@ namespace C971_Assessment.Views
             termToEdit.Title = termTitle.Text;
             termToEdit.StartDate = DateTime.Parse(termStart.Text);
             termToEdit.EndDate = DateTime.Parse(termEnd.Text);
+            termToEdit.NumCourses = Int32.Parse(numCourses.Text);
             Navigation.PushAsync(new EditTermPage(termToEdit));
         }
 
         private void deleteBtn_Clicked(object sender, EventArgs e)
         {
-            _selectedTerm.Title = termTitle.Text;
-            _selectedTerm.StartDate = DateTime.Parse(termStart.Text);
-            _selectedTerm.EndDate = DateTime.Parse(termEnd.Text);
+            //_selectedTerm.Title = termTitle.Text;
+            //_selectedTerm.StartDate = DateTime.Parse(termStart.Text);
+            //_selectedTerm.EndDate = DateTime.Parse(termEnd.Text);
             using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
             {
                 conn.CreateTable<Term>();
