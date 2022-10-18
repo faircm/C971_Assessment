@@ -17,11 +17,10 @@ namespace C971_Assessment.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditCoursePage : ContentPage
     {
-        //https://uibakery.io/regex-library/email-regex-csharp email regex
-        //https://uibakery.io/regex-library/phone-number-csharp phone number regex
-
         private Regex emailPattern = new Regex("^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$");
         private Regex phonePattern = new Regex("^\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}$");
+
+        // (UIBakery, n.d.)
 
         private Course _currentCourse;
 

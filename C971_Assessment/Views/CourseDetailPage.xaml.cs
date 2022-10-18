@@ -51,6 +51,11 @@ namespace C971_Assessment.Views
 
         private void deleteBtn_Clicked(object sender, EventArgs e)
         {
+            if (_selectedCourse.NumObjective > 0 || _selectedCourse.NumPerformance > 0)
+            {
+                DisplayAlert("Error", "All associated assessments must be removed before deleting a course", "Ok");
+                return;
+            }
             using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
             {
                 conn.CreateTable<Term>();

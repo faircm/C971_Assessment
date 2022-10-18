@@ -45,9 +45,11 @@ namespace C971_Assessment.Views
 
         private void deleteBtn_Clicked(object sender, EventArgs e)
         {
-            //_selectedTerm.Title = termTitle.Text;
-            //_selectedTerm.StartDate = DateTime.Parse(termStart.Text);
-            //_selectedTerm.EndDate = DateTime.Parse(termEnd.Text);
+            if (_selectedTerm.NumCourses > 0)
+            {
+                DisplayAlert("Error", "All associated courses must be removed before deleting a term", "Ok");
+                return;
+            }
             using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
             {
                 conn.CreateTable<Term>();

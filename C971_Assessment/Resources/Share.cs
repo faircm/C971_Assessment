@@ -6,7 +6,6 @@ using Xamarin.Essentials;
 
 namespace C971_Assessment.Resources
 {
-    //https://learn.microsoft.com/en-us/xamarin/essentials/share?tabs=android
     internal class Share
     {
         public static async Task ShareText(string title, string notes)
@@ -16,6 +15,7 @@ namespace C971_Assessment.Resources
                 Text = title + ": " + notes,
                 Title = "Course Details"
             });
+            // (Montemagno et al., 2022)
         }
     }
 }

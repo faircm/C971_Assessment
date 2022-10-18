@@ -27,13 +27,13 @@ namespace C971_Assessment
             SampleData.populateDB();
 
             // FOR TESTING PURPOSES, CLEARS DATABASE OF ALL DATA
-            /*SampleData.clearDB();
-            using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
-            {
-                conn.CreateTable<Term>();
-                conn.CreateTable<Course>();
-                conn.CreateTable<Assessment>();
-            }*/
+            /* SampleData.clearDB();
+             using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
+             {
+                 conn.CreateTable<Term>();
+                 conn.CreateTable<Course>();
+                 conn.CreateTable<Assessment>();
+             }*/
 
             MainPage = new AppShell();
         }
