@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="C971_Assessment.Views.CourseDetailPage">
+             x:Class="C971_Assessment.Views.CourseDetailPage"
+             BackgroundColor="#003057">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="editDetailsBtn" Text="Edit Details" Clicked="editDetailsBtn_Clicked" />
@@ -11,7 +12,9 @@
     <ContentPage.Content>
 
         <StackLayout>
-            <Grid>
+            <Label Text="WGU COURSE TRACKER" BackgroundColor="#003057" TextColor="#C69214" FontSize="Title" HorizontalTextAlignment="Center" Padding="10,10,10,10" />
+            <Label Text="COURSE DETAILS" BackgroundColor="#003057" TextColor="White" FontSize="Medium" HorizontalTextAlignment="Center" />
+                <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150" />
                     <ColumnDefinition Width="*" />
@@ -63,7 +66,7 @@
                 <Label Text="Course Notes:" Grid.Column="0" Grid.Row="8" />
                 <Label x:Name="courseNotes" Grid.Column="1" Grid.Row="8" />
                 <Label Text="Notifications: " Grid.Column="0" Grid.Row="9" />
-                <Switch x:Name="notificationSwitch"  Grid.Column="1" Grid.Row="9" IsEnabled="False" IsVisible="True" />
+                <CheckBox x:Name="notificationSwitch"  Grid.Column="1" Grid.Row="9" IsEnabled="False" HorizontalOptions="Start"/>
 
                 <Button x:Name="shareCourseDetails" Text="Share Course Details" Clicked="shareCourseDetails_Clicked"  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="10" BackgroundColor="#D0D0CD" TextColor="#000" />
                 <Button x:Name="viewAssessmentsBtn" Text="View Assessments" Clicked="viewAssessmentsBtn_Clicked" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="11" BackgroundColor="#327DA9" TextColor="#FFF" />

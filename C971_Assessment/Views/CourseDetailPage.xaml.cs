@@ -41,7 +41,7 @@ namespace C971_Assessment.Views
             instEmail.Text = _selectedCourse.InstructorEmail;
             instPhone.Text = _selectedCourse.InstructorPhone;
             courseNotes.Text = _selectedCourse.Notes;
-            notificationSwitch.IsToggled = _selectedCourse.NotificationsOn;
+            notificationSwitch.IsChecked = _selectedCourse.NotificationsOn;
         }
 
         private void editDetailsBtn_Clicked(object sender, EventArgs e)
@@ -58,6 +58,8 @@ namespace C971_Assessment.Views
                 {
                     DisplayAlert("Success", "Course deleted successfully.", "Ok");
                     _selectedTerm.NumCourses--;
+                    if (_selectedTerm.NumCourses < 0)
+                        _selectedTerm.NumCourses = 0;
                 }
                 else
                 {

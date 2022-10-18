@@ -46,7 +46,7 @@ namespace C971_Assessment.Views
             instEmail.Text = _currentCourse.InstructorEmail;
             instPhone.Text = _currentCourse.InstructorPhone;
             courseNotes.Text = _currentCourse.Notes;
-            notificationSwitch.IsToggled = _currentCourse.NotificationsOn;
+            notificationSwitch.IsChecked = _currentCourse.NotificationsOn;
         }
 
         private void saveCourse_btn(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace C971_Assessment.Views
                 _currentCourse.InstructorEmail = instEmail.Text;
                 _currentCourse.InstructorPhone = instPhone.Text;
                 _currentCourse.Notes = courseNotes.Text;
-                _currentCourse.NotificationsOn = notificationSwitch.IsToggled;
+                _currentCourse.NotificationsOn = notificationSwitch.IsChecked;
                 var notifier = CrossLocalNotifications.Current;
 
                 using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
@@ -92,7 +92,7 @@ namespace C971_Assessment.Views
                     if (conn.Update(_currentCourse) > 0)
                     {
                         DisplayAlert("Success", "Course edited successfully.", "Ok");
-                        Navigation.PopToRootAsync();
+                        Navigation.PopAsync();
                     }
                     else
                     {

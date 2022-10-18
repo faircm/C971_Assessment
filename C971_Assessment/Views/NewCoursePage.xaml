@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="C971_Assessment.Views.NewCoursePage">
+             x:Class="C971_Assessment.Views.NewCoursePage"
+             BackgroundColor="#003057">
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="saveBtn" Text="Save" Clicked="saveBtn_Clicked" />
         <ToolbarItem x:Name="cancelBtn" Text="Cancel" Clicked="cancelBtn_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="WGU COURSE TRACKER" BackgroundColor="#003057" TextColor="#C69214" FontSize="Title" HorizontalTextAlignment="Center" Padding="10,10,10,10" />
+            <Label Text="ADD NEW COURSE" BackgroundColor="#003057" TextColor="White" FontSize="Medium" HorizontalTextAlignment="Center" />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150" />
@@ -53,7 +56,7 @@
                 <Entry x:Name="courseNotes" ReturnType="Next"  Grid.Column="1" Grid.Row="8" />
 
                 <Label Text="Notifications: " Grid.Column="0" Grid.Row="9" />
-                <Switch x:Name="notificationSwitch" IsToggled="True"  Grid.Column="1" Grid.Row="9" />
+                <CheckBox x:Name="notificationSwitch" IsChecked="True"  Grid.Column="1" Grid.Row="9" HorizontalOptions="Start" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

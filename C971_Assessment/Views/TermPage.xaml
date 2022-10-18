@@ -4,38 +4,44 @@
              xmlns:local="clr-namespace:C971_Assessment"
              xmlns:model="clr-namespace:C971_Assessment.Models"
              x:Class="C971_Assessment.Views.TermPage"
-             BackgroundColor="White">
+             BackgroundColor="#003057">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add Term" x:Name="AddTermBtn" Clicked="AddTermBtn_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <ListView x:Name="termListView" ItemSelected="termListView_ItemSelected" HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Label Text="{Binding Id}" IsVisible="False" IsEnabled="False" />
-                            <Label Text="Term Title: " Grid.Column="0" Grid.Row="0" FontSize="Small" />
-                            <Label Text="{Binding Title}" Grid.Column="1" Grid.Row="0" FontSize="Small" />
+        <StackLayout>
+            <Label Text="WGU COURSE TRACKER" BackgroundColor="#003057" TextColor="#C69214" FontSize="Title" HorizontalTextAlignment="Center" Padding="10,10,10,10" />
+            <Label Text="TERMS" BackgroundColor="#003057" TextColor="White" FontSize="Medium" HorizontalTextAlignment="Center" />
+            <ListView x:Name="termListView" ItemSelected="termListView_ItemSelected" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid BackgroundColor="White">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding Id}" IsVisible="False" IsEnabled="False" />
+                                <Label Text="Term Title: " Grid.Column="0" Grid.Row="0" />
+                                <Label Text="{Binding Title}" Grid.Column="1" Grid.Row="0" />
 
-                            <Label Text="Term Start: " Grid.Column="0" Grid.Row="1" FontSize="Small" />
-                            <Label Text="{Binding StartDate}" Grid.Column="1" Grid.Row="1" FontSize="Small" />
+                                <Label Text="Term Start: " Grid.Column="0" Grid.Row="1" />
+                                <Label Text="{Binding StartDate}" Grid.Column="1" Grid.Row="1" />
 
-                            <Label Text="Term End: " Grid.Column="0" Grid.Row="2" FontSize="Small" />
-                            <Label Text="{Binding EndDate}" Grid.Column="1" Grid.Row="2" Margin="0,0,0,40" FontSize="Small" />
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                                <Label Text="Term End: " Grid.Column="0" Grid.Row="2" />
+                                <Label Text="{Binding EndDate}" Grid.Column="1" Grid.Row="2" />
+                                <Rectangle BackgroundColor="#003057" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" HeightRequest="10"></Rectangle>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

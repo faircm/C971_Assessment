@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="C971_Assessment.Views.EditAssessmentPage">
+             x:Class="C971_Assessment.Views.EditAssessmentPage"
+             BackgroundColor="#003057">
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="saveBtn" Text="Save" Clicked="saveBtn_Clicked" />
         <ToolbarItem x:Name="cancelBtn" Text="Cancel" Clicked="cancelBtn_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="WGU COURSE TRACKER" BackgroundColor="#003057" TextColor="#C69214" FontSize="Title" HorizontalTextAlignment="Center" Padding="10,10,10,10"/>
+            <Label Text="EDIT ASSESSMENT" BackgroundColor="#003057" TextColor="White" FontSize="Medium" HorizontalTextAlignment="Center" />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150" />
@@ -28,19 +31,19 @@
                 <Entry x:Name="assessmentTitle" Grid.Column="1" Grid.Row="0" />
 
                 <Label Text="Assessment Start Date:" Grid.Column="0" Grid.Row="1" />
-                <DatePicker x:Name="startDate" Grid.Column="1" Grid.Row="1" />
+                <DatePicker x:Name="startDate" Grid.Column="1" Grid.Row="1" FontSize="Small"/>
 
                 <Label Text="Assessment End Date:" Grid.Column="0" Grid.Row="2" />
-                <DatePicker x:Name="endDate" Grid.Column="1" Grid.Row="2" />
+                <DatePicker x:Name="endDate" Grid.Column="1" Grid.Row="2" FontSize="Small"/>
 
                 <Label Text="Assessment Due Date:" Grid.Column="0" Grid.Row="3" />
-                <DatePicker x:Name="dueDate" Grid.Column="1" Grid.Row="3" />
+                <DatePicker x:Name="dueDate" Grid.Column="1" Grid.Row="3" FontSize="Small"/>
 
                 <Label Text="Assessment Type:" Grid.Column="0" Grid.Row="4" />
-                <Picker x:Name="assessmentType" Grid.Column="1" Grid.Row="4" />
+                <Picker x:Name="assessmentType" Grid.Column="1" Grid.Row="4" FontSize="Small"/>
 
                 <Label Text="Notifications:" Grid.Column="0" Grid.Row="5" />
-                <Switch x:Name="notificationSwitch" Grid.Column="1" Grid.Row="5" />
+                <CheckBox x:Name="notificationSwitch" Grid.Column="1" Grid.Row="5" HorizontalOptions="Start" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

@@ -1,38 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="C971_Assessment.Views.AssessmentPage">
+             x:Class="C971_Assessment.Views.AssessmentPage"
+             BackgroundColor="#003057">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add Assessment" x:Name="AddAssessmentBtn" Clicked="AddAssessmentBtn_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <ListView x:Name="assessmentListView" ItemSelected="assessmentListView_ItemSelected"  HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="100" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Label Text="{Binding Id}" IsVisible="False" IsEnabled="False" />
-                            <Label Text="Term Title: " Grid.Column="0" Grid.Row="0" />
-                            <Label Text="{Binding Title}" Grid.Column="1" Grid.Row="0" />
+        <StackLayout>
+            <Label Text="WGU COURSE TRACKER" BackgroundColor="#003057" TextColor="#C69214" FontSize="Title" HorizontalTextAlignment="Center" Padding="10,10,10,10" />
+            <Label Text="ASSESSMENTS" BackgroundColor="#003057" TextColor="White" FontSize="Medium" HorizontalTextAlignment="Center" />
+            <ListView x:Name="assessmentListView" ItemSelected="assessmentListView_ItemSelected"  HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding Id}" IsVisible="False" IsEnabled="False" />
+                                <Label Text="Assessment Title: " Grid.Column="0" Grid.Row="0" />
+                                <Label Text="{Binding Title}" Grid.Column="1" Grid.Row="0" />
 
-                            <Label Text="Term Start: " Grid.Column="0" Grid.Row="1" />
-                            <Label Text="{Binding StartDate}" Grid.Column="1" Grid.Row="1" />
+                                <Label Text="Assessment Start Date: " Grid.Column="0" Grid.Row="1" />
+                                <Label Text="{Binding StartDate}" Grid.Column="1" Grid.Row="1" />
 
-                            <Label Text="Term End: " Grid.Column="0" Grid.Row="2" />
-                            <Label Text="{Binding EndDate}" Grid.Column="1" Grid.Row="2" Margin="0,0,0,40" />
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                                <Label Text="Assesment Due Date: " Grid.Column="0" Grid.Row="2" />
+                                <Label Text="{Binding DueDate}" Grid.Column="1" Grid.Row="2"/>
+                                <Rectangle BackgroundColor="#003057" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" HeightRequest="10"></Rectangle>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

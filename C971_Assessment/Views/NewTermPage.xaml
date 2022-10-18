@@ -2,29 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="C971_Assessment.Views.NewTermPage"
-             BackgroundColor="#FFF">
+            BackgroundColor="#003057">
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="saveBtn" Text="Save" Clicked="saveBtn_Clicked" />
         <ToolbarItem x:Name="cancelBtn" Text="Cancel" Clicked="cancelBtn_Clicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Label Text="Term Title: " Grid.Column="0" Grid.Row="0" />
-            <Entry x:Name="titleEntry" Grid.Column="1" Grid.Row="0" />
-            <Label Text="Term Start Date: " Grid.Column="0" Grid.Row="1" />
-            <DatePicker x:Name="startDatePicker" Grid.Column="1" Grid.Row="1" />
-            <Label Text="Term End Date: " Grid.Column="0" Grid.Row="2" />
-            <DatePicker x:Name="endDatePicker" Grid.Column="1" Grid.Row="2" />
-        </Grid>
+        <StackLayout>
+            <Label Text="WGU COURSE TRACKER" BackgroundColor="#003057" TextColor="#C69214" FontSize="Title" HorizontalTextAlignment="Center" Padding="10,10,10,10" />
+            <Label Text="ADD NEW TERM" BackgroundColor="#003057" TextColor="White" FontSize="Medium" HorizontalTextAlignment="Center" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label Text="Term Title: " Grid.Column="0" Grid.Row="0" />
+                <Entry x:Name="titleEntry" Grid.Column="1" Grid.Row="0" />
+                <Label Text="Term Start Date: " Grid.Column="0" Grid.Row="1" />
+                <DatePicker x:Name="startDatePicker" Grid.Column="1" Grid.Row="1" />
+                <Label Text="Term End Date: " Grid.Column="0" Grid.Row="2" />
+                <DatePicker x:Name="endDatePicker" Grid.Column="1" Grid.Row="2" />
+            </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

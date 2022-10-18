@@ -3,50 +3,56 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:C971_Assessment"
              xmlns:model="clr-namespace:C971_Assessment.Models"
-             x:Class="C971_Assessment.Views.CoursePage">
+             x:Class="C971_Assessment.Views.CoursePage"
+             BackgroundColor="#003057">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add Course" x:Name="AddCourseBtn" Clicked="AddCourseBtn_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <ListView x:Name="courseListView" ItemSelected="courseListView_ItemSelected" HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
+        <StackLayout>
+            <Label Text="WGU COURSE TRACKER" BackgroundColor="#003057" TextColor="#C69214" FontSize="Title" HorizontalTextAlignment="Center" Padding="10,10,10,10" />
+            <Label Text="COURSES" BackgroundColor="#003057" TextColor="White" FontSize="Medium" HorizontalTextAlignment="Center" />
+            <ListView x:Name="courseListView" ItemSelected="courseListView_ItemSelected" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
 
-                            <Label Text="Course Title:" Grid.Column="0" Grid.Row="0" />
-                            <Label x:Name="courseTitle" Text="{Binding Title}" Grid.Column="1" Grid.Row="0" />
+                                <Label Text="Course Title:" Grid.Column="0" Grid.Row="0" />
+                                <Label x:Name="courseTitle" Text="{Binding Title}" Grid.Column="1" Grid.Row="0" />
 
-                            <Label Text="Course Due Date:" Grid.Column="0" Grid.Row="1" />
-                            <Label x:Name="courseDue" Text="{Binding EndDate}" Grid.Column="1" Grid.Row="1" />
+                                <Label Text="Course Due Date:" Grid.Column="0" Grid.Row="1" />
+                                <Label x:Name="courseDue" Text="{Binding EndDate}" Grid.Column="1" Grid.Row="1" />
 
-                            <Label Text="Course Status:" Grid.Column="0" Grid.Row="2" />
-                            <Label x:Name="courseStatus" Text="{Binding Status}" Grid.Column="1" Grid.Row="2" Margin="0,0,0,40" />
+                                <Label Text="Course Status:" Grid.Column="0" Grid.Row="2" />
+                                <Label x:Name="courseStatus" Text="{Binding Status}" Grid.Column="1" Grid.Row="2" />
+                                <Rectangle BackgroundColor="#003057" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" HeightRequest="10"></Rectangle>
 
-                            <!--Invisible fields, ensures all traits are sent to editing form on selection-->
-                            <Label x:Name="termId" Text="{Binding termId}" IsVisible="False" />
-                            <Label x:Name="courseId" Text="{Binding Id}" IsVisible="False" />
-                            <Label x:Name="courseStart" Text="{Binding StartDate}"  IsVisible="False" />
-                            <Label x:Name="courseEnd" Text="{Binding EndDate}"  IsVisible="False" />
-                            <Label x:Name="instName" Text="{Binding InstructorName}"  IsVisible="False" />
-                            <Label x:Name="instEmail" Text="{Binding InstructorEmail}"  IsVisible="False" />
-                            <Label x:Name="instPhone" Text="{Binding InstructorPhone}"  IsVisible="False" />
-                            <Editor x:Name="courseNotes" Text="{Binding Notes}" IsReadOnly="True"  IsVisible="False" />
-                            <Switch x:Name="notificationSwitch" IsToggled="{Binding NotificationsOn}" IsVisible="False" IsEnabled="False" />
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                                <!--Invisible fields, ensures all traits are sent to editing form on selection-->
+                                <Label x:Name="termId" Text="{Binding termId}" IsVisible="False" />
+                                <Label x:Name="courseId" Text="{Binding Id}" IsVisible="False" />
+                                <Label x:Name="courseStart" Text="{Binding StartDate}"  IsVisible="False" />
+                                <Label x:Name="courseEnd" Text="{Binding EndDate}"  IsVisible="False" />
+                                <Label x:Name="instName" Text="{Binding InstructorName}"  IsVisible="False" />
+                                <Label x:Name="instEmail" Text="{Binding InstructorEmail}"  IsVisible="False" />
+                                <Label x:Name="instPhone" Text="{Binding InstructorPhone}"  IsVisible="False" />
+                                <Editor x:Name="courseNotes" Text="{Binding Notes}" IsReadOnly="True"  IsVisible="False" />
+                                <CheckBox x:Name="notificationSwitch" IsChecked="{Binding NotificationsOn}" IsVisible="False" IsEnabled="False" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -69,7 +69,7 @@ namespace C971_Assessment.Views
                 newAssessment.EndDate = endDate.Date;
                 newAssessment.DueDate = dueDate.Date;
                 newAssessment.Type = PickerOptions.typeOptions[assessmentType.SelectedIndex];
-                newAssessment.NotificationsOn = notificationSwitch.IsToggled;
+                newAssessment.NotificationsOn = notificationSwitch.IsChecked;
                 newAssessment.CourseID = _courseId;
 
                 using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))

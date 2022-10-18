@@ -9,7 +9,7 @@ namespace C971_Assessment
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
+            Routing.RegisterRoute(nameof(TermPage), typeof(TermPage));
             Notifier.getAssessmentNotifications();
             Notifier.getCourseNotifications();
         }

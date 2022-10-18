@@ -8,6 +8,16 @@ namespace C971_Assessment.Resources
 {
     public class SampleData
     {
+        public static void clearDB()
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
+            {
+                conn.DropTable<Assessment>();
+                conn.DropTable<Course>();
+                conn.DropTable<Term>();
+            }
+        }
+
         public static void populateDB()
         {
             Term sampleTerm = new Term();
@@ -56,33 +66,16 @@ namespace C971_Assessment.Resources
             using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
             {
                 conn.CreateTable<Term>();
+                conn.CreateTable<Course>();
+                conn.CreateTable<Assessment>();
                 if (conn.Table<Term>().Count() == 0)
                 {
                     conn.Insert(sampleTerm);
-                }
-            }
-            using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
-            {
-                conn.CreateTable<Course>();
-                if (conn.Table<Course>().Count() == 0)
-                {
                     conn.Insert(sampleCourse);
-                }
-            }
-            using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
-            {
-                conn.CreateTable<Assessment>();
-                if (conn.Table<Assessment>().Count() == 0)
-                {
                     conn.InsertOrReplace(sampleAssessment_1);
                     conn.InsertOrReplace(sampleAssessment_2);
                 }
             }
-            /*using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
-            {
-                conn.CreateTable<Assessment>();
-                conn.InsertOrReplace(sampleAssessment_2);
-            }*/
         }
     }
 }

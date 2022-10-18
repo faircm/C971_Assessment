@@ -64,7 +64,7 @@ namespace C971_Assessment.Views
                 newCourse.InstructorEmail = instEmail.Text;
                 newCourse.InstructorPhone = instPhone.Text;
                 newCourse.Notes = courseNotes.Text;
-                newCourse.NotificationsOn = notificationSwitch.IsToggled;
+                newCourse.NotificationsOn = notificationSwitch.IsChecked;
                 newCourse.termId = _termId;
 
                 using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))

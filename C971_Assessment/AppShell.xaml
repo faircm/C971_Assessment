@@ -30,7 +30,6 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="Home" ContentTemplate="{DataTemplate local:HomePage}" />
         <ShellContent Title="Terms" ContentTemplate="{DataTemplate local:TermPage}" />
     </TabBar>
 

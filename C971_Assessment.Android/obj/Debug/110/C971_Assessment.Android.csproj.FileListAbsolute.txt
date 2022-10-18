@@ -670,6 +670,5 @@ C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Asse
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\jl\76bdc229-4bdd-44ef-a15c-cd5c87da891a.jar
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\proguard\1c0e9530-0cba-422a-aa32-2f4b39600253.cfg
-C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\android\assets\Plugin.LocalNotifications.pdb
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\jl\181ad649-c5c9-4e07-b39e-f64aae2d561b.jar
+C:\Users\cmfai\OneDrive\Desktop\school\C971_Assessment\C971_Assessment\C971_Assessment.Android\obj\Debug\110\androidx\proguard\fe6bb316-593e-496c-8b2e-a25c908b63cc.cfg

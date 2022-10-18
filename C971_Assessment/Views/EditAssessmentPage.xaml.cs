@@ -37,7 +37,7 @@ namespace C971_Assessment.Views
             startDate.Date = _currentAssessment.StartDate;
             endDate.Date = _currentAssessment.EndDate;
             dueDate.Date = _currentAssessment.DueDate;
-            notificationSwitch.IsToggled = _currentAssessment.NotificationsOn;
+            notificationSwitch.IsChecked = _currentAssessment.NotificationsOn;
 
             if (_currentAssessment.Type == "Objective")
             {
@@ -86,7 +86,7 @@ namespace C971_Assessment.Views
                     _currentAssessment.StartDate = startDate.Date;
                     _currentAssessment.EndDate = endDate.Date;
                     _currentAssessment.DueDate = dueDate.Date;
-                    _currentAssessment.NotificationsOn = notificationSwitch.IsToggled;
+                    _currentAssessment.NotificationsOn = notificationSwitch.IsChecked;
 
                     conn.CreateTable<Term>();
                     if (conn.Update(_currentAssessment) > 0)
@@ -99,7 +99,6 @@ namespace C971_Assessment.Views
                                 _selectedCourse.NumObjective++;
                                 _selectedCourse.NumPerformance--;
                             }
-                                
                         }
                         else
                         {
@@ -109,7 +108,6 @@ namespace C971_Assessment.Views
                                 _selectedCourse.NumObjective--;
                             }
                         }
-                            
                     }
                     else
                     {
