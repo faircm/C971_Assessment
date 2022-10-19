@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cmfai\\OneDrive\\Desktop\\school\\C971_Assessment\\C971_Assessment\\C971_Assessment\\C971_Assessment.csproj": {}
+    "C:\\Users\\cmfai\\OneDrive\\Desktop\\school\\C971_Assessment\\C971_Assessment\\C971_Assessment.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cmfai\\OneDrive\\Desktop\\school\\C971_Assessment\\C971_Assessment\\C971_Assessment\\C971_Assessment.csproj": {
+    "C:\\Users\\cmfai\\OneDrive\\Desktop\\school\\C971_Assessment\\C971_Assessment\\C971_Assessment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cmfai\\OneDrive\\Desktop\\school\\C971_Assessment\\C971_Assessment\\C971_Assessment\\C971_Assessment.csproj",
+        "projectUniqueName": "C:\\Users\\cmfai\\OneDrive\\Desktop\\school\\C971_Assessment\\C971_Assessment\\C971_Assessment.csproj",
         "projectName": "C971_Assessment",
-        "projectPath": "C:\\Users\\cmfai\\OneDrive\\Desktop\\school\\C971_Assessment\\C971_Assessment\\C971_Assessment\\C971_Assessment.csproj",
+        "projectPath": "C:\\Users\\cmfai\\OneDrive\\Desktop\\school\\C971_Assessment\\C971_Assessment\\C971_Assessment.csproj",
         "packagesPath": "C:\\Users\\cmfai\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cmfai\\OneDrive\\Desktop\\school\\C971_Assessment\\C971_Assessment\\C971_Assessment\\obj\\",
+        "outputPath": "C:\\Users\\cmfai\\OneDrive\\Desktop\\school\\C971_Assessment\\C971_Assessment\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

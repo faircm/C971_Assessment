@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BItiMuumiF8I9M5bqSy6gWU3eOeJ+9R8D3ptGeqBRr+Qk75W0sclzCmYb+2gGQL0tncTQxQLrR5y9rQkOqOf3w==",
+  "dgSpecHash": "Yiv5NtbWU0EznS+09dIdAh10B29LXqBwBOJ04d/TOaSa7fuhK6pzvNBaFQSKH/dLMnyWcqrQQEVF1sJgC5uCNg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cmfai\\OneDrive\\Desktop\\school\\C971_Assessment\\C971_Assessment\\C971_Assessment\\C971_Assessment.csproj",
+  "projectFilePath": "C:\\Users\\cmfai\\OneDrive\\Desktop\\school\\C971_Assessment\\C971_Assessment\\C971_Assessment.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cmfai\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\cmfai\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
