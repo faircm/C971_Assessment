@@ -42,7 +42,7 @@
                                 <Label x:Name="termId" Text="{Binding termId}" IsVisible="False" />
                                 <Label x:Name="courseId" Text="{Binding Id}" IsVisible="False" />
                                 <Label x:Name="courseStart" Text="{Binding StartDate}"  IsVisible="False" />
-                                <Label x:Name="courseEnd" Text="{Binding EndDate}"  IsVisible="False" />
+                                <Label x:Name="courseDue" Text="{Binding DueDate}"  IsVisible="False" />
                                 <Label x:Name="instName" Text="{Binding InstructorName}"  IsVisible="False" />
                                 <Label x:Name="instEmail" Text="{Binding InstructorEmail}"  IsVisible="False" />
                                 <Label x:Name="instPhone" Text="{Binding InstructorPhone}"  IsVisible="False" />

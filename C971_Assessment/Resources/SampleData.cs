@@ -8,16 +8,6 @@ namespace C971_Assessment.Resources
 {
     public class SampleData
     {
-        public static void clearDB()
-        {
-            using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
-            {
-                conn.DropTable<Assessment>();
-                conn.DropTable<Course>();
-                conn.DropTable<Term>();
-            }
-        }
-
         public static void populateDB()
         {
             Term sampleTerm = new Term();

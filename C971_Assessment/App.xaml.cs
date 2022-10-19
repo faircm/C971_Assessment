@@ -1,5 +1,4 @@
-﻿using C971_Assessment.Services;
-using C971_Assessment.Views;
+﻿using C971_Assessment.Views;
 using C971_Assessment.Resources;
 using System;
 using System.IO;
@@ -25,16 +24,6 @@ namespace C971_Assessment
             _databaseLocation = databaseLocation;
             InitializeComponent();
             SampleData.populateDB();
-
-            // FOR TESTING PURPOSES, CLEARS DATABASE OF ALL DATA
-            /* SampleData.clearDB();
-             using (SQLiteConnection conn = new SQLiteConnection(App._databaseLocation))
-             {
-                 conn.CreateTable<Term>();
-                 conn.CreateTable<Course>();
-                 conn.CreateTable<Assessment>();
-             }*/
-
             MainPage = new AppShell();
         }
 
